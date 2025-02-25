@@ -11,4 +11,4 @@ CustomColor.bgLight1
 ],
 ),
 borderRadius: BorderRadius.circular(100),
-),
+);

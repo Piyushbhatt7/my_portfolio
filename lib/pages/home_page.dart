@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
@@ -26,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           // HeaderDesktop(),
 
           Container(
-            height: 50,
+            height: 40,
             margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
             decoration: kHeaderDecoration,
             child: Row(
@@ -41,6 +40,8 @@ class _HomePageState extends State<HomePage> {
                   onPressed: (){},
                     icon: const Icon(Icons.menu),
                 ),
+
+                const SizedBox(width: 15,),
               ],
             ),
           ),
