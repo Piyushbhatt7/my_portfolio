@@ -51,9 +51,12 @@ class _HomePageState extends State<HomePage> {
               // const MainDesktop(),
 
               Container(
+                margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
                 height: screeenHeight,
                 constraints: BoxConstraints(minHeight: 560),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // avatar img
                     ShaderMask(
@@ -74,6 +77,8 @@ class _HomePageState extends State<HomePage> {
                         )
                     ),
                     // intro text
+
+                    const SizedBox(height: 15,),
 
                     const Text("Hii, \nI'm Piyush Bhatt\n a Flutter Developer",
                       style: TextStyle(
