@@ -56,9 +56,50 @@ class _HomePageState extends State<HomePage> {
 
               // SKILLS
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // title
+                  const Text("What I can do",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
+                    ),
+                    ),
+
+                    // platorm and skill
+
+                    Row(
+                      children: [
+                        // platforms
+
+                        Wrap(
+                          children: [
+                            Container(
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: CustomColor.bgLight2,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+
+                              child: ListTile(
+
+                              ),
+                            )
+                          ],
+                        )
+
+
+                        // skills
+                      ],
+                    )
+                  ],
+                ),
               ),
 
               // PROJECTS
