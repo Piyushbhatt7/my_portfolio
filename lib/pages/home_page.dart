@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
+import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
@@ -14,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -21,23 +24,44 @@ class _HomePageState extends State<HomePage> {
     {
       child:
       return Scaffold(
+        key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
+          //endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
 
               // MAIN
 
-              if(constraints.maxWidth >= 600.0)
+              if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() else
                 HeaderMobile(
                   onLogoTap: () {
 
                   },
                   onMenuTap: () {
-
+                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
+
+              Container(
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text("Hii, \nI'am Piyush Bhatt\n a Flutter Developer"),
+                        ElevatedButton(onPressed: ()
+                            {
+                              
+                            },
+                            child: const Text("Get in touch")
+                        )
+                      ],
+                    ),
+                    Image.asset("assets/android.jpg")
+                  ],
+                ),
+              ),
 
               // SKILLS
               Container(
