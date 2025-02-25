@@ -19,6 +19,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
     return LayoutBuilder(
       builder: (context, constraints)
     {
@@ -45,6 +47,9 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20.0),
+                height: screenSize.height/1.2,
+                constraints: BoxConstraints(minHeight: 350),
                 child: Row(
                   children: [
                     Column(
@@ -58,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                    Image.asset("assets/android.jpg")
+                    Image.asset("assets/android.png", width: screenWidth/2, height: 160,)
                   ],
                 ),
               ),
