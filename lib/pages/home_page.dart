@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/constants/size.dart';
+import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
@@ -80,6 +81,7 @@ class _HomePageState extends State<HomePage> {
 
                         Wrap(
                           children: [
+                            for(int i = 0; i < platformItems.length; i++)
                             Container(
                               width: 200,
                               decoration: BoxDecoration(
@@ -88,8 +90,9 @@ class _HomePageState extends State<HomePage> {
                               ),
 
                               child: ListTile(
-
-                              ),
+                                leading: Image.asset(platformItems[i]["img"]),
+                                title: Text(platformItems[i]["title"]),
+                               ),
                             )
                           ],
                         )

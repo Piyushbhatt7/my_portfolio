@@ -1,17 +1,17 @@
 const List<Map> platformItems = [
 
   {
-    "img": "android.png",
+    "img": "assets/ad.png",
     "title": "Android Dev",
   },
 
   {
-    "img": "ios.png",
+    "img": "assets/ios.png",
     "title": "IOS Dev",
   },
 
   {
-    "img": "web.png",
+    "img": "assets/web.png",
     "title": "Web Dev"
   }
 ];
@@ -27,7 +27,7 @@ const List<Map> skillItems = [
   },
 
   {
-    "img": "assets/dart.png",
+    "img": "assets/Dart_logo.png",
     "title": "Dart Dev",
   },
 
@@ -42,7 +42,7 @@ const List<Map> skillItems = [
   },
 
   {
-    "img": "sql.png",
+    "img": "assets/sql.png",
     "title": "DBA"
   }
 ];
