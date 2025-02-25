@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
+import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 
@@ -27,16 +28,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 50,
             margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors:
-                [
-                  Colors.transparent,
-                  CustomColor.bgLight1
-                ],
-              ),
-              borderRadius: BorderRadius.circular(100),
-            ),
+            decoration: kHeaderDecoration,
             child: Row(
               children: [
                 SiteLogo(onTap: ()
