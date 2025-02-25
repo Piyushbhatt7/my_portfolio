@@ -20,7 +20,36 @@ class _HomePageState extends State<HomePage> {
             height: 500,
             width: double.maxFinite,
             color: Colors.blueGrey,
-          )
+          ),
+
+          // SKILLS
+          Container(
+            height: 500,
+            width: double.maxFinite,
+
+          ),
+
+          // PROJECTS
+          Container(
+            height: 500,
+            width: double.maxFinite,
+            color: Colors.blueGrey,
+          ),
+
+
+          // CONTACT
+          Container(
+            height: 500,
+            width: double.maxFinite,
+            
+          ),
+
+          // FOOTER
+          Container(
+            height: 500,
+            width: double.maxFinite,
+            color: Colors.blueGrey,
+          ),
         ],
       )
     );
