@@ -66,6 +66,7 @@ class _HomePageState extends State<HomePage> {
                        ]
                        ).createShader(bounds);
                     },
+                        blendMode: BlendMode.srcATop,
                         child: Image.asset(
                           "assets/android.png",
                           width: screenWidth,
