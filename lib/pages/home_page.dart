@@ -76,6 +76,8 @@ class _HomePageState extends State<HomePage> {
                     // platorm and skill
 
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // platforms
 
@@ -84,6 +86,8 @@ class _HomePageState extends State<HomePage> {
                             maxWidth: 450
                           ),
                           child: Wrap(
+                            spacing: 5.0,
+                            runSpacing: 5.0,
                             children: [
                               for(int i = 0; i < platformItems.length; i++)
                               Container(
@@ -95,7 +99,7 @@ class _HomePageState extends State<HomePage> {
 
                                 child: ListTile(
                                   contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                                  leading: Image.asset(platformItems[i]["img"], width: 28, height: 25,),
+                                  leading: Image.asset(platformItems[i]["img"], width: 35, height: 40,),
                                   title: Text(platformItems[i]["title"]),
                                  ),
                               )
