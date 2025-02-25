@@ -79,22 +79,28 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         // platforms
 
-                        Wrap(
-                          children: [
-                            for(int i = 0; i < platformItems.length; i++)
-                            Container(
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: CustomColor.bgLight2,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 450
+                          ),
+                          child: Wrap(
+                            children: [
+                              for(int i = 0; i < platformItems.length; i++)
+                              Container(
+                                width: 200,
+                                decoration: BoxDecoration(
+                                  color: CustomColor.bgLight2,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
 
-                              child: ListTile(
-                                leading: Image.asset(platformItems[i]["img"]),
-                                title: Text(platformItems[i]["title"]),
-                               ),
-                            )
-                          ],
+                                child: ListTile(
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                                  leading: Image.asset(platformItems[i]["img"], width: 28, height: 25,),
+                                  title: Text(platformItems[i]["title"]),
+                                 ),
+                              )
+                            ],
+                          ),
                         )
 
 
