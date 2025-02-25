@@ -24,27 +24,7 @@ class _HomePageState extends State<HomePage> {
           // MAIN
           // HeaderDesktop(),
 
-          Container(
-            height: 40,
-            margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-            decoration: kHeaderDecoration,
-            child: Row(
-              children: [
-                SiteLogo(onTap: ()
-                  {
-
-                  },
-                ),
-                const Spacer(),
-                IconButton(
-                  onPressed: (){},
-                    icon: const Icon(Icons.menu),
-                ),
-
-                const SizedBox(width: 15,),
-              ],
-            ),
-          ),
+         
 
           // SKILLS
           Container(
