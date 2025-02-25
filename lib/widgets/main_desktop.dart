@@ -46,7 +46,7 @@ class MainDesktop extends StatelessWidget {
                   ],
                 ),
                 Image.asset(
-                  "assets/android.png", width: screenWidth / 2, height: 160,)
+                  "assets/android.png", width: screenWidth / 2, height: 200,)
               ],
             ),
           );

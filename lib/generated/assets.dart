@@ -3,5 +3,12 @@ class Assets {
   Assets._();
 
   static const String assetsAndroid = 'assets/android.png';
+  static const String assetsCpp = 'assets/cpp.png';
+  static const String assetsDartLogo = 'assets/Dart_logo.png';
+  static const String assetsFlutter = 'assets/flutter.png';
+  static const String assetsJava = 'assets/java.png';
+  static const String assetsPngTransparentAppleLogoIphoneComputerAppleLogoCompanyHeartLogo = 'assets/png-transparent-apple-logo-iphone-computer-apple-logo-company-heart-logo.png';
+  static const String assetsSql = 'assets/sql.png';
+  static const String assetsWeb = 'assets/web.png';
 
 }

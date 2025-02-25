@@ -6,6 +6,7 @@ import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
+import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,9 +49,10 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
 
-              // const MainDesktop(),
+              if(constraints.maxWidth >= kMinDesktopWidth)
+              const MainDesktop() else const MainMobile(),
 
-              
+
 
               // SKILLS
               Container(
