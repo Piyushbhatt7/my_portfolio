@@ -3,6 +3,7 @@ import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
+import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,47 +16,63 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: CustomColor.scaffoldBg,
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
+    return LayoutBuilder(
+      builder: (context, constraints)
+    {
+      child:
+      return Scaffold(
+          backgroundColor: CustomColor.scaffoldBg,
+          body: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
 
-          // MAIN
-          // HeaderDesktop(),
+              // MAIN
 
-         
+              if(constraints.maxWidth >= 600.0)
+                const HeaderDesktop() else
+                HeaderMobile(
+                  onLogoTap: () {
 
-          // SKILLS
-          Container(
-            height: 500,
-            width: double.maxFinite,
-            color: Colors.blueGrey,
-          ),
+                  },
+                  onMenuTap: () {
 
-          // PROJECTS
-          Container(
-            height: 500,
-            width: double.maxFinite,
+                  },
+                ),
 
-          ),
+              // SKILLS
+              Container(
+                height: 500,
+                width: double.maxFinite,
+                color: Colors.blueGrey,
+              ),
+
+              // PROJECTS
+              Container(
+                height: 500,
+                width: double.maxFinite,
+
+              ),
 
 
-          // CONTACT
-          Container(
-            height: 500,
-            width: double.maxFinite,
-            color: Colors.blueGrey,
-          ),
+              // CONTACT
+              Container(
+                height: 500,
+                width: double.maxFinite,
+                color: Colors.blueGrey,
+              ),
 
-          // FOOTER
-          Container(
-            height: 500,
-            width: double.maxFinite,
+              // FOOTER
+              Container(
+                height: 500,
+                width: double.maxFinite,
 
-          ),
-        ],
-      )
+              ),
+            ],
+          )
+
+      );
+    }
+
     );
   }
 }
