@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage> {
                 height: screenSize.height/1.2,
                 constraints: BoxConstraints(minHeight: 350),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
