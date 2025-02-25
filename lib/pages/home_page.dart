@@ -51,8 +51,52 @@ class _HomePageState extends State<HomePage> {
               // const MainDesktop(),
 
               Container(
-                height: scree,
-              )
+                height: screeenHeight,
+                constraints: BoxConstraints(minHeight: 560),
+                child: Column(
+                  children: [
+                    // avatar img
+                    ShaderMask(
+                      shaderCallback: (bounds)
+                    {
+                       return LinearGradient(
+                       colors: [
+                         CustomColor.scaffoldBg.withOpacity(0.6),
+                         CustomColor.scaffoldBg.withOpacity(0.6),
+                       ]
+                       ).createShader(bounds);
+                    },
+                        child: Image.asset(
+                          "assets/android.png",
+                          width: screenWidth,
+                          height: 190,
+                        )
+                    ),
+                    // intro text
+
+                    const Text("Hii, \nI'm Piyush Bhatt\n a Flutter Developer",
+                      style: TextStyle(
+                        fontSize: 24,
+                        height: 1.5,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+
+                    const SizedBox(height: 15,),
+
+                    // contact btn
+                    SizedBox(
+                      width: 190,
+                      child: ElevatedButton(onPressed: () {
+
+                      },
+                          child: const Text("Get in touch")
+                      ),
+                    ),
+                  ],
+                ),
+              ),
 
               // SKILLS
               Container(

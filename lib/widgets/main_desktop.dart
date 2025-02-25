@@ -17,10 +17,11 @@ class MainDesktop extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.symmetric(horizontal: 20.0),
             height: screenHeight / 1.2,
-            constraints: const BoxConstraints(minHeight: 350.0),
+            constraints: const BoxConstraints(minWidth: 350.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                // intro message
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -41,7 +42,7 @@ class MainDesktop extends StatelessWidget {
                       },
                           child: const Text("Get in touch")
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Image.asset(
