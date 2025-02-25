@@ -13,8 +13,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        scrollDirection: Axis.vertical,
         children: [
-          //
+          // MAIN
+          Container(
+            height: 500,
+            width: double.maxFinite,
+            color: Colors.blueGrey,
+          )
         ],
       )
     );
