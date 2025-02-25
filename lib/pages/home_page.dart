@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/nav_items.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,11 +35,25 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Row(
               children: [
-                Text("Piyush"),
+                Text(
+                  "Piyush",
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline,
+                      color: CustomColor.yellowSecondary
+                  ),),
                 Spacer(),
-                for(int i = 0; i < 5; i++)
-                TextButton(onPressed: (){},
-                    child: Text("button")
+                for(int i = 0; i < navTitles.length; i++)
+                Padding(
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: TextButton(onPressed: (){},
+                      child: Text(navTitles[i], style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: CustomColor.whitePrimary,
+                      ),)
+                  ),
                 )
               ],
             ),
