@@ -13,6 +13,11 @@ const List<Map> platformItems = [
   {
     "img": "assets/web.png",
     "title": "Web Dev"
+  },
+
+  {
+    "img": "assets/desk.png",
+    "title": "Desktop"
   }
 ];
 
