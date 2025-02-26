@@ -110,7 +110,15 @@ class _HomePageState extends State<HomePage> {
                        const SizedBox(width: 50.0,),
                         // skills
 
-
+                        Wrap(
+                          children: [
+                            Chip(
+                              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                                label: Text(""),
+                              avatar: Image.asset(""),
+                            ),
+                          ],
+                        )
                       ],
                     )
                   ],
