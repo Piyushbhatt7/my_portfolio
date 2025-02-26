@@ -2,13 +2,13 @@
 class Assets {
   Assets._();
 
+  static const String assetsAd = 'assets/ad.png';
   static const String assetsAndroid = 'assets/android.png';
-  static const String assetsCpp = 'assets/cpp.png';
-  static const String assetsDartLogo = 'assets/Dart_logo.png';
+  static const String assetsDartLogo = 'assets/Dart-logo.png';
+  static const String assetsDownload = 'assets/download.png';
   static const String assetsFlutter = 'assets/flutter.png';
   static const String assetsIos = 'assets/ios.png';
   static const String assetsJava = 'assets/java.png';
-  static const String assetsPngimg.com  androidLogoPNG27 = 'assets/pngimg.com - android_logo_PNG27.png';
   static const String assetsSql = 'assets/sql.png';
   static const String assetsWeb = 'assets/web.png';
 

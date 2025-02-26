@@ -27,7 +27,7 @@ const List<Map> skillItems = [
   },
 
   {
-    "img": "assets/Dart_logo.png",
+    "img": "assets/Dart-logo.png",
     "title": "Dart Dev",
   },
 
