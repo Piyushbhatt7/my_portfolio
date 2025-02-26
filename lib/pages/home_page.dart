@@ -112,10 +112,11 @@ class _HomePageState extends State<HomePage> {
 
                         Wrap(
                           children: [
+                            for(int i = 0; i < skillItems.length; i++)
                             Chip(
-                              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                                label: Text(""),
-                              avatar: Image.asset(""),
+                              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                                label: Text(skillItems[i]["img"]),
+                              avatar: Image.asset(skillItems[i]["title"]),
                             ),
                           ],
                         )
