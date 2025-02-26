@@ -9,6 +9,7 @@ import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
+import 'package:portfolio/widgets/skill_deskstop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -74,10 +75,11 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                   const  SizedBox(height: 50.0,),
+
                     // platorm and skill
 
-
-                                     ],
+                    SkillDeskstop(),
+                ],
                 ),
               ),
 
