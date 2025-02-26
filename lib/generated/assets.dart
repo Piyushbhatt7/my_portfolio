@@ -7,7 +7,7 @@ class Assets {
   static const String assetsCpp = 'assets/cpp.png';
   static const String assetsDartLogo = 'assets/Dart-logo.png';
   static const String assetsDesk = 'assets/desk.png';
-  static const String assetsDownload = 'assets/download.png';
+  static const String assetsDownload = 'assets/download.jpg';
   static const String assetsFlutter = 'assets/flutter.png';
   static const String assetsIos = 'assets/ios.png';
   static const String assetsJava = 'assets/java.png';
