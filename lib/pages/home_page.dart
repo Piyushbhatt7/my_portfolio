@@ -105,10 +105,12 @@ class _HomePageState extends State<HomePage> {
                               )
                             ],
                           ),
-                        )
+                        ),
 
-
+                       const SizedBox(width: 50.0,),
                         // skills
+
+
                       ],
                     )
                   ],
