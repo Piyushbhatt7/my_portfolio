@@ -155,7 +155,9 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
                             child: Row(
                               children: [
-                                 Text("Available on: ", style: ,)
+                                 Text("Available on: ", style: TextStyle(
+
+                                 ),)
                               ],
                             ),
                           )
