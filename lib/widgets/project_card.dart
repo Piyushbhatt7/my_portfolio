@@ -75,13 +75,15 @@ final ProjectUtils project;
                   child: InkWell(
                       onTap: ()
                       {
-
+                         //
                       },
                       child: Image.asset(
                         "assets/ios.png",
                         width: 13,
                       )),
                 ),
+
+                if(project.androidLink != null)
                 InkWell(
                     onTap: ()
                     {
