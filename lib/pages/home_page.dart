@@ -96,9 +96,20 @@ class _HomePageState extends State<HomePage> {
                             leading: Image.asset(platformItems[i]["img"], width: 26.0,),
                             title: Text(platformItems[i]["title"]),
                           ),
-                        )
-
+                        ),
+                      const SizedBox(height: 50.0,),
                         // skills
+
+                        Wrap(
+                          children: [
+                            Chip(
+                              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                              backgroundColor: CustomColor.bgLight2,
+                              label: Text(skillItems[i]["title"]),
+                              avatar: Image.asset(skillItems[i]["img"]),
+                            ),
+                          ],
+                        )
                       ],
                     )
                 ],
