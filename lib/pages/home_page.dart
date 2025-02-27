@@ -165,9 +165,20 @@ class _HomePageState extends State<HomePage> {
 
                                 Padding(
                                   padding: const EdgeInsets.only(right: 4.0),
-                                  child: Image.asset("assets/ios.png", width: 13,),
+                                  child: InkWell(
+                                    onTap: ()
+                                      {
+
+                                      },
+                                      child: Image.asset(
+                                        "assets/ios.png",
+                                        width: 13,
+                                      )),
                                 ),
-                                Image.asset("assets/android_icon.png", width: 18,),
+                                InkWell(
+                                    child: Image.asset(
+                                      "assets/android_icon.png",
+                                      width: 18,)),
 
                               ],
                             ),
