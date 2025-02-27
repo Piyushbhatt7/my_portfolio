@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         // paltform
-                        for(int i = 0; i<platformItems.length; i++)
+                        for(int i = 0; i < platformItems.length; i++)
                         Container(
                           margin: EdgeInsets.only(bottom: 5.0),
                           width: double.maxFinite,
@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
 
                         Wrap(
                           children: [
+                            for(int i = 0; i < skillItems.length; i++)
                             Chip(
                               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                               backgroundColor: CustomColor.bgLight2,
