@@ -24,7 +24,8 @@ final ProjectUtils project;
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/projects/logolove.png",
+          Image.asset(
+          project.image,
             height: 140,
             width: 250,
             fit: BoxFit.cover,
