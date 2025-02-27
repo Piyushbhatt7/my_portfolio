@@ -10,6 +10,7 @@ import 'package:portfolio/widgets/main_desktop.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skill_deskstop.dart';
+import 'package:portfolio/widgets/skills_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -98,22 +99,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       const SizedBox(height: 50.0,),
+
                         // skills
 
-                        Wrap(
-                          spacing: 10.0,
-                          runSpacing: 10.0,
-                          alignment: WrapAlignment.center,
-                          children: [
-                            for(int i = 0; i < skillItems.length; i++)
-                            Chip(
-                              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                              backgroundColor: CustomColor.bgLight2,
-                              label: Text(skillItems[i]["title"]),
-                              avatar: Image.asset(skillItems[i]["img"]),
-                            ),
-                          ],
-                        )
+                        SkillsMobile(),
                       ],
                     )
                 ],
