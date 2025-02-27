@@ -90,9 +90,24 @@ class _HomePageState extends State<HomePage> {
 
               // PROJECTS
               Container(
-                height: 500,
-                width: double.maxFinite,
+                width: screenWidth,
+                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
 
+                child: Column(
+                  children: [
+                    // work projects title
+                    const Text("Work Projects",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+
+
+                    // work projects cards
+                  ],
+                ),
 
               ),
 
