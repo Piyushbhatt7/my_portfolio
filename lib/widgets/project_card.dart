@@ -88,7 +88,7 @@ final ProjectUtils project;
                 InkWell(
                     onTap: ()
                     {
-                      //
+                      js.context.callMethod("open", [project.androidLink]);
                     },
                     child: Image.asset(
                       "assets/android_icon.png",
