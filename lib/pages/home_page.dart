@@ -176,6 +176,10 @@ class _HomePageState extends State<HomePage> {
                                       )),
                                 ),
                                 InkWell(
+                                    onTap: ()
+                                    {
+
+                                    },
                                     child: Image.asset(
                                       "assets/android_icon.png",
                                       width: 18,)),
