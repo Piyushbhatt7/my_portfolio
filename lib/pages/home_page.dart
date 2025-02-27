@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                  Text("Available on: ",
                                    style: TextStyle(
-                                     color: CustomColor
+                                     color: CustomColor.yellowSecondary,
                                  ),)
                               ],
                             ),
