@@ -5,6 +5,7 @@ import '../constants/colors.dart';
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget({
     super.key,
+    required this.project
   });
 
 final ProjectUtils project;
