@@ -101,6 +101,9 @@ class _HomePageState extends State<HomePage> {
                         // skills
 
                         Wrap(
+                          spacing: 10.0,
+                          runSpacing: 10.0,
+                          alignment: WrapAlignment.center,
                           children: [
                             for(int i = 0; i < skillItems.length; i++)
                             Chip(
