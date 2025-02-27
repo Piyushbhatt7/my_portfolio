@@ -35,7 +35,7 @@ final ProjectUtils project;
 
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 15, 12, 12),
-            child: const Text(project.title, style: TextStyle(
+            child: Text(project.title, style: TextStyle(
               fontWeight: FontWeight.w600,
               color: CustomColor.whitePrimary,
             ),),
