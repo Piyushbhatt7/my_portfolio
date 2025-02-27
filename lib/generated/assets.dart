@@ -7,10 +7,14 @@ class Assets {
   static const String assetsCpp = 'assets/cpp.png';
   static const String assetsDartLogo = 'assets/Dart-logo.png';
   static const String assetsDesk = 'assets/desk.png';
-  static const String assetsDownload = 'assets/download.jpg';
   static const String assetsFlutter = 'assets/flutter.png';
   static const String assetsIos = 'assets/ios.png';
   static const String assetsJava = 'assets/java.png';
   static const String assetsSql = 'assets/sql.png';
+  static const String assetsWeb = 'assets/web.jpg';
+  static const String projectsInstlogo = 'assets/Projects/instlogo.png';
+  static const String projectsLogolove = 'assets/Projects/logolove.png';
+  static const String projectsMainlogo = 'assets/Projects/mainlogo.png';
+  static const String projectsWhatsapp = 'assets/Projects/whatsapp.png';
 
 }

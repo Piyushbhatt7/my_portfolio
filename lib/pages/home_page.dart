@@ -84,7 +84,6 @@ class _HomePageState extends State<HomePage> {
                     else
                     const SkillsMobile()
 
-
                 ],
                 ),
               ),
@@ -93,6 +92,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 500,
                 width: double.maxFinite,
+
 
               ),
 
