@@ -61,7 +61,7 @@ final ProjectUtils project;
             padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
             child: Row(
               children: [
-                Text("Available on: ",
+               const Text("Available on: ",
                   style: TextStyle(
                     color: CustomColor.yellowSecondary,
                     fontSize: 11.0,
