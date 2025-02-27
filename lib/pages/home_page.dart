@@ -83,7 +83,19 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         // paltform
-
+                        Container(
+                          margin: EdgeInsets.only(bottom: 5.0),
+                          width: double.maxFinite,
+                          decoration: BoxDecoration(
+                            color: CustomColor.bgLight2,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: ListTile(
+                            contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                            leading: Image.asset("", width: 26.0,),
+                            title: Text(""),
+                          ),
+                        )
 
                         // skills
                       ],
