@@ -158,6 +158,7 @@ class _HomePageState extends State<HomePage> {
                                  Text("Available on: ",
                                    style: TextStyle(
                                      color: CustomColor.yellowSecondary,
+                                     fontSize: 10.0,
                                  ),)
                               ],
                             ),
