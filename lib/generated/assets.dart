@@ -12,9 +12,9 @@ class Assets {
   static const String assetsJava = 'assets/java.png';
   static const String assetsSql = 'assets/sql.png';
   static const String assetsWeb = 'assets/web.jpg';
-  static const String projectsInstlogo = 'assets/Projects/instlogo.png';
-  static const String projectsLogolove = 'assets/Projects/logolove.png';
-  static const String projectsMainlogo = 'assets/Projects/mainlogo.png';
-  static const String projectsWhatsapp = 'assets/Projects/whatsapp.png';
+  static const String projectsInstlogo = 'assets/projects/instlogo.png';
+  static const String projectsLogolove = 'assets/projects/logolove.png';
+  static const String projectsMainlogo = 'assets/projects/mainlogo.png';
+  static const String projectsPngtreeWhatsappIconPngImage6315990 = 'assets/projects/pngtree-whatsapp-icon-png-image_6315990.png';
 
 }

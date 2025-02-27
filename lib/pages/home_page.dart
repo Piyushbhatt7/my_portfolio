@@ -146,12 +146,18 @@ class _HomePageState extends State<HomePage> {
                               color: CustomColor.whiteSecondary,
                             ),),
                           ),
+                          const Spacer(),
 
                           // footer
 
                           Container(
                             color: CustomColor.bgLight1,
                             padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                            child: Row(
+                              children: [
+
+                              ],
+                            ),
                           )
                         ],
                       ),
