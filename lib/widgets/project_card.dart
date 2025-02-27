@@ -45,7 +45,7 @@ final ProjectUtils project;
 
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-            child: Text("Dummy title", style: TextStyle(
+            child: Text(project.subtitle, style: TextStyle(
               fontSize: 10.0,
               color: CustomColor.whiteSecondary,
             ),),
