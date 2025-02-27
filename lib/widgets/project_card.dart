@@ -69,6 +69,7 @@ final ProjectUtils project;
 
                 const Spacer(),
 
+                if(project.iosLink != null)
                 Padding(
                   padding: const EdgeInsets.only(right: 4.0),
                   child: InkWell(
