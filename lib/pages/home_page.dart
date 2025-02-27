@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         // paltform
+                        for(int i = 0; i<platformItems.length; i++)
                         Container(
                           margin: EdgeInsets.only(bottom: 5.0),
                           width: double.maxFinite,
@@ -92,8 +93,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: ListTile(
                             contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                            leading: Image.asset("", width: 26.0,),
-                            title: Text(""),
+                            leading: Image.asset(platformItems[i]["img"], width: 26.0,),
+                            title: Text(platformItems[i]["title"]),
                           ),
                         )
 
