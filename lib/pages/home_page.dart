@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
                     // platorm and skill
 
-                   const SkillDeskstop(),
+                   const SkillDeskstop(), //0:28
                 ],
                 ),
               ),
