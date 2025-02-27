@@ -160,8 +160,15 @@ class _HomePageState extends State<HomePage> {
                                      color: CustomColor.yellowSecondary,
                                      fontSize: 11.0,
                                  ),),
-                                
-                                Image.asset("assets/android_icon.png")
+
+                                const Spacer(),
+
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 4.0),
+                                  child: Image.asset("assets/ios.png", width: 13,),
+                                ),
+                                Image.asset("assets/android_icon.png", width: 18,),
+
                               ],
                             ),
                           )
