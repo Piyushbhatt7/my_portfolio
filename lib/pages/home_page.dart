@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                                      fontSize: 11.0,
                                  ),),
                                 
-                                Image.asset("")
+                                Image.asset("assets/android_icon.png")
                               ],
                             ),
                           )
