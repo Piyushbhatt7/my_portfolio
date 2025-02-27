@@ -78,7 +78,16 @@ class _HomePageState extends State<HomePage> {
 
                     // platorm and skill
 
-                   const SkillDeskstop(), //0:28
+                  // const SkillDeskstop(), //0:28
+
+                    Column(
+                      children: [
+                        // paltform
+
+
+                        // skills
+                      ],
+                    )
                 ],
                 ),
               ),
