@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/project_utils.dart';
 import '../constants/colors.dart';
+import 'dart:js' as js;
 
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget({
@@ -75,7 +76,7 @@ final ProjectUtils project;
                   child: InkWell(
                       onTap: ()
                       {
-                         //
+                         js.context.callMethod("open", [project.iosLink]);
                       },
                       child: Image.asset(
                         "assets/ios.png",
@@ -87,7 +88,7 @@ final ProjectUtils project;
                 InkWell(
                     onTap: ()
                     {
-
+                      //
                     },
                     child: Image.asset(
                       "assets/android_icon.png",
