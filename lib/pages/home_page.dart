@@ -79,32 +79,12 @@ class _HomePageState extends State<HomePage> {
 
                     // platorm and skill
 
-                  // const SkillDeskstop(), //0:28
+                    if(constraints.maxWidth >= kMedDesktopWidth)
+                    const SkillDeskstop()
+                    else
+                    const SkillsMobile()
 
-                    Column(
-                      children: [
-                        // paltform
-                        for(int i = 0; i < platformItems.length; i++)
-                        Container(
-                          margin: EdgeInsets.only(bottom: 5.0),
-                          width: double.maxFinite,
-                          decoration: BoxDecoration(
-                            color: CustomColor.bgLight2,
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          child: ListTile(
-                            contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                            leading: Image.asset(platformItems[i]["img"], width: 26.0,),
-                            title: Text(platformItems[i]["title"]),
-                          ),
-                        ),
-                      const SizedBox(height: 50.0,),
 
-                        // skills
-
-                        SkillsMobile(),
-                      ],
-                    )
                 ],
                 ),
               ),
