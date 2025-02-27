@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
             children: [
 
               // MAIN
+/*
 
               if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() else
@@ -87,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                 ],
                 ),
               ),
+*/
 
               // PROJECTS
               Container(
@@ -106,6 +108,19 @@ class _HomePageState extends State<HomePage> {
 
 
                     // work projects cards
+                    Container(
+                      height: 280,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: CustomColor.bgLight2,
+                      ),
+                      child: Column(
+                        children: [
+
+                        ],
+                      ),
+                    )
                   ],
                 ),
 
