@@ -49,7 +49,7 @@ final ProjectUtils project;
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Text(project.subtitle, style:
             const TextStyle(
-              fontSize: 10.0,
+              fontSize: 12.0,
               color: CustomColor.whiteSecondary,
             ),),
           ),

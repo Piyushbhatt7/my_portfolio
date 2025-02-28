@@ -4,6 +4,7 @@ import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/style.dart';
+import 'package:portfolio/utils/project_utils.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
@@ -11,6 +12,8 @@ import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
+
+import '../widgets/project_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,6 +24,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final workProjectUtils = ProjectUtils.getWorkProjects();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: CustomColor.scaffoldBg,
           //endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
           body: ListView(
-            scrollDirection: Axis.vertical,
+            scrollDirection: Axis.vertical, 
             children: [
 
               // MAIN
@@ -109,7 +113,7 @@ class _HomePageState extends State<HomePage> {
 
 
                     // work projects cards
-                    ProjectCardWidget()
+                    ProjectCardWidget(project: workProjectUtils.first),
                   ],
                 ),
 
