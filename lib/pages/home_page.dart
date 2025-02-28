@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-    final screeenHeight = screenSize.height;
+    final screeenHeight = screenSize.height; 
     return LayoutBuilder(
       builder: (context, constraints)
     {
