@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(
       builder: (context, constraints)
     {
-      child:
+     // child:
       return Scaffold(
         key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
