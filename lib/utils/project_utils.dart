@@ -11,7 +11,7 @@ class ProjectUtils {
     required this.image,
     required this.title,
     required this.subtitle,
-    this.androidLink,
+    this.androidLink, 
     this.iosLink,
     this.webLink,
 });
