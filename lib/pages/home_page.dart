@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.maxFinite,
   
               ),
-            ],
+            ], 
           )
 
       );
