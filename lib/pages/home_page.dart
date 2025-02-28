@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             children: [ 
 
               // MAIN 
-/*
+/*  
 
               if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() else
