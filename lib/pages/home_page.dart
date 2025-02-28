@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
 
               ),
   
-  
+   
               // CONTACT
               Container(
                 height: 500,
