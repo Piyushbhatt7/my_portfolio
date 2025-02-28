@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blueGrey,
               ),
                
-              // FOOTER
+              // FOOTER 
               Container(
                 height: 500,
                 width: double.maxFinite,
