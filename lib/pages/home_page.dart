@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical, 
             children: [ 
 
-              // MAIN
+              // MAIN 
 /*
 
               if(constraints.maxWidth >= kMinDesktopWidth)
