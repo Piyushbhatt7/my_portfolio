@@ -25,7 +25,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     subtitle: "This is a Dating Application connects users having real time like and profile features",
     androidLink: "https://github.com/Piyushbhatt7/Dating-Application",
   ),
-
+ 
   ProjectUtils(
     image: "assets/projects/mainlogo.png",
     title: "Foodie (Food Delivery App)",
