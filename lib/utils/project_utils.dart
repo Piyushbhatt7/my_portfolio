@@ -32,7 +32,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     subtitle: "This is a Food Delivey App provides food in minutes",
     androidLink: "https://github.com/Piyushbhatt7/Food_Delivery_App",
   ),
-
+ 
   ProjectUtils(
     image: "assets/projects/instalogo.png ",
     title: "Instagram Clone",
