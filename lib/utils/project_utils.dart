@@ -19,7 +19,7 @@ class ProjectUtils {
 
 List<ProjectUtils> hobbyProjectUtils = [
 
-  ProjectUtils(
+  ProjectUtils( 
     image: "assets/projects/logolove.png",
     title: "Soul-Mingle (Dating App)",
     subtitle: "This is a Dating Application connects users having real time like and profile features",
