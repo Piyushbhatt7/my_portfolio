@@ -13,7 +13,7 @@ class ProjectUtils {
     required this.subtitle,
     this.androidLink, 
     this.iosLink,
-    this.webLink,
+    this.webLink, 
 });
   // HOBBY PROJECTS 
 
