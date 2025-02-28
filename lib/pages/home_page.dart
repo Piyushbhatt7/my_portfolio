@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           //endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical, 
-            children: [
+            children: [ 
 
               // MAIN
 /*
