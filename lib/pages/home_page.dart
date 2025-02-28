@@ -93,7 +93,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 */
-
               // PROJECTS
               Container(
                 width: screenWidth,
