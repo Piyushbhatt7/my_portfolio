@@ -43,7 +43,7 @@ List<ProjectUtils> hobbyProjectUtils = [
   ProjectUtils(
     image: "assets/projects/whatsapp.png",
     title: "WhatApp Clone",
-    subtitle: "This is a WhatsApp Clone",
+    subtitle: "This is a WhatsApp Clone", 
     androidLink: "https://github.com/Piyushbhatt7/WhatsApp-Ui",
   ),
 ];
