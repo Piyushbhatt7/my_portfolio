@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
               ),
 */
              // PROJECTS
-              ProjectsSection(),
+             const ProjectsSection(),
   
    
               // CONTACT
