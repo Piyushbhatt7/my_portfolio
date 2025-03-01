@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  //final workProjectUtils = ProjectUtils.getWorkProjects();
+
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
 
 
                     // work projects cards
-                   ProjectCardWidget(project: hob)
+                   ProjectCardWidget(project: workProjectUtils.first)
                   ],
                 ),
 

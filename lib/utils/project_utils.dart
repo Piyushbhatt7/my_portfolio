@@ -7,14 +7,15 @@ class ProjectUtils {
   final String? iosLink;
   final String? webLink;
 
-  ProjectUtils ({
+  ProjectUtils({
     required this.image,
     required this.title,
     required this.subtitle,
-    this.androidLink, 
+    this.androidLink,
     this.iosLink,
-    this.webLink, 
-});
+    this.webLink,
+  });
+}
   // HOBBY PROJECTS 
 
 List<ProjectUtils> hobbyProjectUtils = [
@@ -64,21 +65,9 @@ List<ProjectUtils> workProjectUtils = [
     androidLink: "https://github.com/Piyushbhatt7/Food_Delivery_App",
   ),
 
-  ProjectUtils(
-    image: "assets/projects/instalogo.png ",
-    title: "Instagram Clone",
-    subtitle: "This is a Instagram Frontend App",
-    androidLink: "https://github.com/Piyushbhatt7/Instagram-Clone",
-  ),
 
-  ProjectUtils(
-    image: "assets/projects/whatsapp.png",
-    title: "WhatApp Clone",
-    subtitle: "This is a WhatsApp Clone",
-    androidLink: "https://github.com/Piyushbhatt7/WhatsApp-Ui",
-  ),
 ];
 
-}
+
 
  
