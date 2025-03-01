@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
-                  SizedBox(),
+                  SizedBox(height: 50,),
                     // work projects cards
                    Wrap(
                      spacing: 25,
