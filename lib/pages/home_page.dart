@@ -142,15 +142,20 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 40,),
                     // hobby projects cards
-                    Wrap(
-                      spacing: 25,
-                      runSpacing: 25,
-                      children: [
-                        for(int i = 0; i < hobbyProjectUtils.length; i++)
-                          ProjectCardWidget(
-                            project: hobbyProjectUtils[i],
-                          ),
-                      ],
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+
+                      ),
+                      child: Wrap(
+                        spacing: 25,
+                        runSpacing: 25,
+                        children: [
+                          for(int i = 0; i < hobbyProjectUtils.length; i++)
+                            ProjectCardWidget(
+                              project: hobbyProjectUtils[i],
+                            ),
+                        ],
+                      ),
                     )
                   ],
                 ),
