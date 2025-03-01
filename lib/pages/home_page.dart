@@ -116,25 +116,8 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         Flexible(
-                          child: TextField(
-                            style: const TextStyle(
-                              color: CustomColor.scaffoldBg,
-                    ),
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(16.0),
-                                filled: true,
-                                fillColor: CustomColor.whiteSecondary,
-                                focusedBorder: getInputBorder,
-                                enabledBorder: getInputBorder,
-                                border: getInputBorder,
-                                hintText: "Your name",
-                                hintStyle: const TextStyle(
-                                  color: CustomColor.hintDark
-                                )
-                              ),
-
-                          ),
-                        )
+                          child:,
+                        ),
                       ],
                     )
                   ],
@@ -155,11 +138,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  OutlineInputBorder get getInputBorder{
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.0),
-      borderSide: BorderSide.none,
-    );
-  }
+
 }
 
