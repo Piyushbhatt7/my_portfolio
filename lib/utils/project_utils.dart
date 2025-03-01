@@ -20,6 +20,20 @@ class ProjectUtils {
 
 List<ProjectUtils> hobbyProjectUtils = [
 
+  ProjectUtils(
+    image: "assets/projects/instlogo.png ",
+    title: "Instagram Clone",
+    subtitle: "This is a Instagram Frontend App",
+    androidLink: "https://github.com/Piyushbhatt7/Instagram-Clone",
+  ),
+
+  ProjectUtils(
+    image: "assets/projects/whatsapp.png",
+    title: "WhatApp Clone",
+    subtitle: "This is a WhatsApp Clone",
+    androidLink: "https://github.com/Piyushbhatt7/WhatsApp-Ui",
+  ),
+
   ProjectUtils( 
     image: "assets/projects/logolove.png",
     title: "Soul-Mingle (Dating App)",
@@ -33,20 +47,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     subtitle: "This is a Food Delivey App provides food in minutes",
     androidLink: "https://github.com/Piyushbhatt7/Food_Delivery_App",
   ),
- 
-  ProjectUtils(
-    image: "assets/projects/instalogo.png ",
-    title: "Instagram Clone",
-    subtitle: "This is a Instagram Frontend App",
-    androidLink: "https://github.com/Piyushbhatt7/Instagram-Clone",
-  ),
- 
-  ProjectUtils(
-    image: "assets/projects/whatsapp.png",
-    title: "WhatApp Clone",
-    subtitle: "This is a WhatsApp Clone", 
-    androidLink: "https://github.com/Piyushbhatt7/WhatsApp-Ui",
-  ),
+
 ];
 
 List<ProjectUtils> workProjectUtils = [
