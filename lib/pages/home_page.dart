@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                      children: [
                        for(int i = 0; i < workProjectUtils.length; i++)
                        ProjectCardWidget(
-                           project: workProjectUtils.first
+                           project: workProjectUtils[i]
                        ),
                      ],
                    )
