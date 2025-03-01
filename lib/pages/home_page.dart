@@ -102,6 +102,12 @@ class _HomePageState extends State<HomePage> {
               Container(
                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 color: CustomColor.bgLight1,
+                child: Column(
+                  children: [
+                    // title
+                    Text("Get in touch", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: CustomColor.whitePrimary),)
+                  ],
+                ),
               ),
                   
               // FOOTER   
