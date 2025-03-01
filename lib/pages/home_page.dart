@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
 
 
                     // hobby projects title
-                    const Text("Work Projects",
+                    const Text("Hobby Projects",
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
