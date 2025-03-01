@@ -53,6 +53,13 @@ List<ProjectUtils> hobbyProjectUtils = [
 List<ProjectUtils> workProjectUtils = [
 
   ProjectUtils(
+    image: "assets/projects/bmi.jpg",
+    title: "BMI - Calculator",
+    subtitle: "This is a flutter base Body Mass Index Calculator",
+    androidLink: "https://github.com/Piyushbhatt7/BMI-Calculator-using-flutter",
+  ),
+
+  ProjectUtils(
     image: "assets/projects/logolove.png",
     title: "Soul-Mingle (Dating App)",
     subtitle: "This is a Dating Application connects users having real time like and profile features",

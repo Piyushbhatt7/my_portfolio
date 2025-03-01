@@ -9,13 +9,14 @@ class Assets {
   static const String assetsDartLogo = 'assets/Dart-logo.png';
   static const String assetsDesk = 'assets/desk.png';
   static const String assetsFlutter = 'assets/flutter.png';
-  static const String assetsImg.icons8 = 'assets/img.icons8.png';
   static const String assetsIos = 'assets/ios.png';
+  static const String assetsIosIcon = 'assets/ios_icon.png';
   static const String assetsJava = 'assets/java.png';
   static const String assetsSql = 'assets/sql.png';
   static const String assetsWeb = 'assets/web.png';
   static const String assetsWebIcon = 'assets/web_icon.png';
-  static const String projectsInstlogo = 'assets/projects/instlogo.png';
+  static const String projectsANI20241010093744 = 'assets/projects/ANI-20241010093744.jpg';
+  static const String projectsInstLogo = 'assets/projects/inst-logo.png';
   static const String projectsLogolove = 'assets/projects/logolove.png';
   static const String projectsMainlogo = 'assets/projects/mainlogo.png';
   static const String projectsWhatsapp = 'assets/projects/whatsapp.png';
