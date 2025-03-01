@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.controller, required this.maxLine, required this.hintText});
-  final TextEditingController controller;
+  const CustomTextField({
+    super.key,
+    this.controller,
+    this.maxLine = 1,
+    this.hintText
+  });
+  final TextEditingController? controller;
   final int maxLine;
-  final String hintText;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return TextField(

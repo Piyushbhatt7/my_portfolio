@@ -5,6 +5,7 @@ import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/utils/project_utils.dart';
+import 'package:portfolio/widgets/custom_text_field.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
@@ -116,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         Flexible(
-                          child:,
+                          child: CustomTextField(),
                         ),
                       ],
                     )
