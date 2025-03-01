@@ -122,6 +122,29 @@ class _HomePageState extends State<HomePage> {
                        ),
                      ],
                    ),
+
+
+                    // hobby projects title
+                    const Text("Work Projects",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+
+                    const SizedBox(height: 50,),
+                    // hobby projects cards
+                    Wrap(
+                      spacing: 25,
+                      runSpacing: 25,
+                      children: [
+                        for(int i = 0; i < workProjectUtils.length; i++)
+                          ProjectCardWidget(
+                            project: workProjectUtils[i],
+                          ),
+                      ],
+                    )
                   ],
                 ),
 
