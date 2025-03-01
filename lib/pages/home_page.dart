@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
 
 
                     // work projects cards
-                   ProjectCardWidget(project: workProjectUtils.first)
+                   Wrap(child: ProjectCardWidget(project: workProjectUtils.first))
                   ],
                 ),
 
