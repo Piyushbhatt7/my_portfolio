@@ -9,6 +9,7 @@ import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
+import 'package:portfolio/widgets/projects_section.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
@@ -93,7 +94,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 */
-
+             // PROJECTS
+              ProjectsSection(),
   
    
               // CONTACT
