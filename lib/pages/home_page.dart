@@ -105,7 +105,12 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     // title
-                    Text("Get in touch", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: CustomColor.whitePrimary),)
+                    Text("Get in touch",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: CustomColor.whitePrimary
+                      ),),
                   ],
                 ),
               ),
