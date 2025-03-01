@@ -48,6 +48,13 @@ List<ProjectUtils> hobbyProjectUtils = [
     androidLink: "https://github.com/Piyushbhatt7/Food_Delivery_App",
   ),
 
+  ProjectUtils(
+    image: "assets/projects/dsa-java.webp",
+    title: "DSA - JAVA",
+    subtitle: "This is I try to cover the DSA concepts in JAVA",
+    androidLink: "https://github.com/Piyushbhatt7/Java---DSA",
+  ),
+
 ];
 
 List<ProjectUtils> workProjectUtils = [
@@ -57,6 +64,13 @@ List<ProjectUtils> workProjectUtils = [
     title: "BMI - Calculator",
     subtitle: "This is a flutter base Body Mass Index Calculator",
     androidLink: "https://github.com/Piyushbhatt7/BMI-Calculator-using-flutter",
+  ),
+
+  ProjectUtils(
+    image: "assets/projects/logo.png",
+    title: "Housify (Room Renting App)",
+    subtitle: "This is a Housify which provides rooms, apartment for rent",
+    androidLink: "https://github.com/Piyushbhatt7/housify_app",
   ),
 
   ProjectUtils(

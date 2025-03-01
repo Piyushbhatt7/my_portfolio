@@ -15,8 +15,10 @@ class Assets {
   static const String assetsSql = 'assets/sql.png';
   static const String assetsWeb = 'assets/web.png';
   static const String assetsWebIcon = 'assets/web_icon.png';
-  static const String projectsANI20241010093744 = 'assets/projects/ANI-20241010093744.jpg';
+  static const String projectsBmi = 'assets/projects/bmi.jpg';
+  static const String projectsDsaJava = 'assets/projects/dsa-java.webp';
   static const String projectsInstLogo = 'assets/projects/inst-logo.png';
+  static const String projectsLogo = 'assets/projects/logo.png';
   static const String projectsLogolove = 'assets/projects/logolove.png';
   static const String projectsMainlogo = 'assets/projects/mainlogo.png';
   static const String projectsWhatsapp = 'assets/projects/whatsapp.png';
