@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
 
 
                     // work projects cards
-                   Column(
+                   Wrap(
                      children: [
                        for(int i = 0; i < workProjectUtils.length; i++)
                        ProjectCardWidget(
