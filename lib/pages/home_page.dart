@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                     // hobby projects cards
                     ConstrainedBox(
                       constraints: BoxConstraints(
-
+                        maxWidth: 800,
                       ),
                       child: Wrap(
                         spacing: 25,
