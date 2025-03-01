@@ -113,6 +113,9 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 40,),
                     // work projects cards
                    ConstrainedBox(
+                     constraints: BoxConstraints(
+                       maxWidth: 800,
+                     ),
                      child: Wrap(
                        spacing: 25,
                        runSpacing: 25,
