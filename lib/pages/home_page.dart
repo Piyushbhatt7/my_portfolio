@@ -144,6 +144,10 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       width: double.maxFinite,
                       child: ElevatedButton(onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: CustomColor.yellowPrimary,
+                            foregroundColor: CustomColor.whitePrimary,
+                          ),
                           child: Text("Get in touch")
                       ),
                     ),
