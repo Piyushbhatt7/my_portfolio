@@ -116,12 +116,14 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 50.0,),
                     Row(
                       children: [
+                        // name
                         Flexible(
                           child: CustomTextField(
                             hintText: "Your name",
                           ),
                         ),
                         const SizedBox(width: 15.0,),
+                        // email
                         Flexible(
                           child: CustomTextField(
                             hintText: "Your email",
@@ -131,14 +133,25 @@ class _HomePageState extends State<HomePage> {
                     ),
                     
                     const SizedBox(height: 15.0,),
-
+                    // message
                     CustomTextField(
                       hintText: "Your message",
-                      maxLine: 20,
+                      maxLine: 15,
+                    ),
+                    const SizedBox(height: 20.0,),
+
+                    // send button
+                    SizedBox(
+                      width: double.maxFinite,
+                      child: ElevatedButton(onPressed: (){},
+                          child: Text("Get in touch")
+                      ),
                     ),
                   ],
                 ),
               ),
+
+
                   
               // FOOTER   
               Container(
