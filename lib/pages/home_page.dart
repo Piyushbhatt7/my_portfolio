@@ -139,9 +139,9 @@ class _HomePageState extends State<HomePage> {
                       spacing: 25,
                       runSpacing: 25,
                       children: [
-                        for(int i = 0; i < workProjectUtils.length; i++)
+                        for(int i = 0; i < hobbyProjectUtils.length; i++)
                           ProjectCardWidget(
-                            project: workProjectUtils[i],
+                            project: hobbyProjectUtils[i],
                           ),
                       ],
                     )
