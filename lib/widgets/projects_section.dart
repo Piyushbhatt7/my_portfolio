@@ -46,7 +46,7 @@ class ProjectsSection extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 80,),
+            const SizedBox(height: 60,),
 
 
             // hobby projects title
