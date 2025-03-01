@@ -123,6 +123,8 @@ class _HomePageState extends State<HomePage> {
                      ],
                    ),
 
+                    const SizedBox(height: 50,),
+
 
                     // hobby projects title
                     const Text("Hobby Projects",
