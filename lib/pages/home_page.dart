@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
 
               // MAIN 
 
-              if(constraints.maxWidth >= kMinDesktopWidth)
+/*              if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() else
                 HeaderMobile(
                   onLogoTap: () {
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
              const SizedBox(height: 30.0,),
              // PROJECTS
              const ProjectsSection(),
-              const SizedBox(height: 30.0,),
+              const SizedBox(height: 30.0,),*/
 
               // CONTACT
               Container(
@@ -109,8 +109,19 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
-                          color: CustomColor.whitePrimary
+                          color: CustomColor.whitePrimary,
                       ),),
+
+                    const SizedBox(height: 50.0,),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: TextField(
+
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),
