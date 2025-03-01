@@ -113,6 +113,8 @@ class _HomePageState extends State<HomePage> {
 
                     // work projects cards
                    Wrap(
+                     spacing: 25,
+                     runSpacing: 25,
                      children: [
                        for(int i = 0; i < workProjectUtils.length; i++)
                        ProjectCardWidget(
