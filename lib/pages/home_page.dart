@@ -148,6 +148,7 @@ class _HomePageState extends State<HomePage> {
                             backgroundColor: CustomColor.yellowPrimary,
                             foregroundColor: CustomColor.whitePrimary,
                           ),
+
                           child: Text("Get in touch")
                       ),
                     ),
