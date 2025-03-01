@@ -14,6 +14,9 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
+      maxLines: maxLine,
+
       style: const TextStyle(
         color: CustomColor.scaffoldBg,
       ),
@@ -24,7 +27,7 @@ class CustomTextField extends StatelessWidget {
           focusedBorder: getInputBorder,
           enabledBorder: getInputBorder,
           border: getInputBorder,
-          hintText: "Your name",
+          hintText: hintText,
           hintStyle: const TextStyle(
               color: CustomColor.hintDark
           )

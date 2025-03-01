@@ -117,10 +117,25 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         Flexible(
-                          child: CustomTextField(),
+                          child: CustomTextField(
+                            hintText: "Your name",
+                          ),
+                        ),
+                        const SizedBox(width: 15.0,),
+                        Flexible(
+                          child: CustomTextField(
+                            hintText: "Your email",
+                          ),
                         ),
                       ],
-                    )
+                    ),
+                    
+                    const SizedBox(height: 15.0,),
+
+                    CustomTextField(
+                      hintText: "Your message",
+                      maxLine: 20,
+                    ),
                   ],
                 ),
               ),
