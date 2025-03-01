@@ -117,6 +117,14 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Flexible(
                           child: TextField(
+                            style: TextStyle(
+                              color: CustomColor.scaffoldBg,
+                    ),
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.all(16.0),
+                                filled: true,
+                                fillColor: CustomColor.whiteSecondary
+                              ),
 
                           ),
                         )
