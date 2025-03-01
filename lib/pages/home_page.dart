@@ -96,13 +96,12 @@ class _HomePageState extends State<HomePage> {
              const SizedBox(height: 30.0,),
              // PROJECTS
              const ProjectsSection(),
-  
-   
+              const SizedBox(height: 30.0,),
+
               // CONTACT
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+               padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
               ),
                   
               // FOOTER   
