@@ -50,7 +50,8 @@ List<ProjectUtils> hobbyProjectUtils = [
 
 List<ProjectUtils> workProjectUtils = [
 
-  ProjectUtils(image: image, title: title, subtitle: subtitle)
+  ProjectUtils(
+      image: image, title: title, subtitle: subtitle)
 ]
 
 }
