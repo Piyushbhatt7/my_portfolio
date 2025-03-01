@@ -110,20 +110,22 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
-                  const SizedBox(height: 50,),
+                  const SizedBox(height: 40,),
                     // work projects cards
-                   Wrap(
-                     spacing: 25,
-                     runSpacing: 25,
-                     children: [
-                       for(int i = 0; i < workProjectUtils.length; i++)
-                       ProjectCardWidget(
-                           project: workProjectUtils[i],
-                       ),
-                     ],
+                   ConstrainedBox(
+                     child: Wrap(
+                       spacing: 25,
+                       runSpacing: 25,
+                       children: [
+                         for(int i = 0; i < workProjectUtils.length; i++)
+                         ProjectCardWidget(
+                             project: workProjectUtils[i],
+                         ),
+                       ],
+                     ),
                    ),
 
-                    const SizedBox(height: 50,),
+                    const SizedBox(height: 80,),
 
 
                     // hobby projects title
@@ -135,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
-                    const SizedBox(height: 50,),
+                    const SizedBox(height: 40,),
                     // hobby projects cards
                     Wrap(
                       spacing: 25,
