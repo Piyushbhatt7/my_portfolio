@@ -15,7 +15,7 @@ final ProjectUtils project;
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 280,
+      height: 300,
       width: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -27,7 +27,7 @@ final ProjectUtils project;
         children: [
           Image.asset(
           project.image,
-            height: 140,
+            height: 150,
             width: 250,
             fit: BoxFit.cover,
           ),
