@@ -182,6 +182,7 @@ class _HomePageState extends State<HomePage> {
                     Wrap(
                       spacing: 12,
                       runSpacing: 12,
+                      alignment: WrapAlignment.center,
                       children: [
                         Image.asset("assets/social/link-din.png", width: 32,),
                        // const SizedBox(width: 10.0,),
