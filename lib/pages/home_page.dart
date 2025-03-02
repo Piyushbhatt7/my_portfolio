@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
-import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/constants/size.dart';
-import 'package:portfolio/constants/skill_items.dart';
-import 'package:portfolio/styles/style.dart';
-import 'package:portfolio/utils/project_utils.dart';
 import 'package:portfolio/widgets/contact_section.dart';
-import 'package:portfolio/widgets/custom_text_field.dart';
 import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/projects_section.dart';
-import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
-
-import '../widgets/project_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,6 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
 
 
   @override
