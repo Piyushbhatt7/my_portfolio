@@ -32,8 +32,11 @@ class ContactSection extends StatelessWidget {
                     {
                       if(constraints.maxWidth >= kMinDesktopWidth)
                         {
-                          return buildnameEmailFieldDesktop();
+                          return buildNameEmailFieldDesktop();
                         }
+
+                      // else
+                      return buildNameEmailFieldMobile();
                     }
             )
           ),
@@ -105,7 +108,7 @@ class ContactSection extends StatelessWidget {
     );
   }
 
-  Row buildnameEmailFieldDesktop() {
+  Row buildNameEmailFieldDesktop() {
     return Row(
       children: [
         // name
@@ -126,7 +129,7 @@ class ContactSection extends StatelessWidget {
   },
 
 
-  Row buildnameEmailFieldMobile() {
+  Row buildNameEmailFieldMobile() {
     return Row(
       children: [
         // name
