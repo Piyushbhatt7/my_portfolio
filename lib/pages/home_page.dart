@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 30.0,),
 
                 // FOOTER
-                Footer(),
+               const Footer(),
               ],
             ),
           )
