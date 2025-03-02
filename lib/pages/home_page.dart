@@ -151,15 +151,17 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20.0,),
 
                     // send button
-                    SizedBox(
-                      width: double.maxFinite,
-                      child: ElevatedButton(onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: CustomColor.yellowPrimary,
-                            foregroundColor: CustomColor.whitePrimary,
-                          ),
-
-                          child: Text("Get in touch")
+                    ConstrainedBox(
+                      child: SizedBox(
+                        width: double.maxFinite,
+                        child: ElevatedButton(onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: CustomColor.yellowPrimary,
+                              foregroundColor: CustomColor.whitePrimary,
+                            ),
+                      
+                            child: Text("Get in touch")
+                        ),
                       ),
                     ),
                   ],
