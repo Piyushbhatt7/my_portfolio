@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
 
                     // send button
                     ConstrainedBox(
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         maxWidth: 700
                       ),
                       child: SizedBox(
