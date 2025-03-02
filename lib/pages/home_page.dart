@@ -128,6 +128,12 @@ class _HomePageState extends State<HomePage> {
       }
 
     final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(
+        context,
+        duration: const Duration(
+            microseconds: 500),
+        curve: Curves.easeInOut,
+    );
   }
 
 }
