@@ -41,73 +41,65 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                ListView(
-                  scrollDirection: Axis.vertical,
-                  children: [
+                 SizedBox(key: navbarKeys.first,),
+                if(constraints.maxWidth >= kMinDesktopWidth)
+                  const HeaderDesktop() else
+                  HeaderMobile(
+                    onLogoTap: () {
 
-                    // MAIN
+                    },
+                    onMenuTap: () {
+                       scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  ),
 
-                    if(constraints.maxWidth >= kMinDesktopWidth)
-                      const HeaderDesktop() else
-                      HeaderMobile(
-                        onLogoTap: () {
+                if(constraints.maxWidth >= kMinDesktopWidth)
+                const MainDesktop() else const MainMobile(),
 
-                        },
-                        onMenuTap: () {
-                           scaffoldKey.currentState?.openEndDrawer();
-                        },
+
+
+                // SKILLS
+                Container(
+
+                  width: screenWidth,
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                  color: CustomColor.bgLight1,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // title
+                    const Text("What I can do",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
                       ),
 
-                    if(constraints.maxWidth >= kMinDesktopWidth)
-                    const MainDesktop() else const MainMobile(),
+                    const  SizedBox(height: 50.0,),
 
+                      // platorm and skill
 
-
-                    // SKILLS
-                    Container(
-
-                      width: screenWidth,
-                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                      color: CustomColor.bgLight1,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // title
-                        const Text("What I can do",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrimary,
-                          ),
-                          ),
-
-                        const  SizedBox(height: 50.0,),
-
-                          // platorm and skill
-
-                          if(constraints.maxWidth >= kMedDesktopWidth)
-                          const SkillDeskstop()
-                          else
-                          const SkillsMobile()
-
-                      ],
-                      ),
-                    ),
-
-                   const SizedBox(height: 30.0,),
-                   // PROJECTS
-                   const ProjectsSection(),
-                    const SizedBox(height: 30.0,),
-
-                    // CONTACT
-                    ContactSection(),
-                    const SizedBox(height: 30.0,),
-
-                    // FOOTER
-                   Footer(),
+                      if(constraints.maxWidth >= kMedDesktopWidth)
+                      const SkillDeskstop()
+                      else
+                      const SkillsMobile()
 
                   ],
+                  ),
                 ),
+
+                                   const SizedBox(height: 30.0,),
+                                   // PROJECTS
+                                   const ProjectsSection(),
+                const SizedBox(height: 30.0,),
+
+                // CONTACT
+                ContactSection(),
+                const SizedBox(height: 30.0,),
+
+                // FOOTER
+                                   Footer(),
               ],
             ),
           )
