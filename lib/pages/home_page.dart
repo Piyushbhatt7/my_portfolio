@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/size.dart';
+import 'package:portfolio/constants/sns_links.dart';
 import 'package:portfolio/widgets/contact_section.dart';
 import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
@@ -10,7 +11,7 @@ import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/projects_section.dart';
 import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
-
+import 'dart:js' as js;
 import '../widgets/drawer_mobile.dart';
 
 class HomePage extends StatefulWidget {
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
     if(navIndex == 4)
       {
         // open a blog page
-
+        js.context.callMethod('open', [SnsLinks.linkdin]);
         return;
       }
 
