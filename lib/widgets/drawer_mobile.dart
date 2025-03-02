@@ -38,6 +38,9 @@ class DrawerMobile extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontSize: 16,
             ),
+            onTap: (){},
+            leading: Icon(navIcons[i]),
+            title: Text(navTitles[i]),
           ),
 
         ],
