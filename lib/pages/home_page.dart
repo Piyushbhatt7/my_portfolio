@@ -185,13 +185,14 @@ class _HomePageState extends State<HomePage> {
                       alignment: WrapAlignment.center,
                       children: [
                         InkWell(
-
+                          onTap: (){},
                             child: Image.asset(
                               "assets/social/link-din.png",
                               width: 32,
                             )),
 
                         InkWell(
+                            onTap: (){},
                             child: Image.asset(
                               "assets/social/github.png",
                               width: 32,
