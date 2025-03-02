@@ -7,6 +7,7 @@ import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/utils/project_utils.dart';
 import 'package:portfolio/widgets/contact_section.dart';
 import 'package:portfolio/widgets/custom_text_field.dart';
+import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
@@ -105,18 +106,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 30.0,),
 
               // FOOTER   
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                width: double.maxFinite,
-                alignment: Alignment.center,
-                child: const Text("Made by Piyush Bhatt with Flutter 3.29",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    color: CustomColor.whiteSecondary,
-                  ),
-                ),
-  
-              ),
+             Footer(),
+
             ], 
           )
 
