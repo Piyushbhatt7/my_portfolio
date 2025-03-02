@@ -5,6 +5,7 @@ import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/style.dart';
 import 'package:portfolio/utils/project_utils.dart';
+import 'package:portfolio/widgets/contact_section.dart';
 import 'package:portfolio/widgets/custom_text_field.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
@@ -100,7 +101,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 30.0,),*/
 
               // CONTACT
-              
+              ContactSection(),
 
               // FOOTER   
               Container(
