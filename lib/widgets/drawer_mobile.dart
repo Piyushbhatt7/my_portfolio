@@ -29,13 +29,15 @@ class DrawerMobile extends StatelessWidget {
           ),
 
           for(int i = 0; i < navIcons.length; i++)
-
           ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text("Home"),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            contentPadding:  EdgeInsets.symmetric(
+              horizontal: 30.0,
+            ),
+            titleTextStyle:  TextStyle(
+              color: CustomColor.whitePrimary,
+              fontWeight: FontWeight.w600,
+              fontSize: 16,
+            ),
           ),
 
         ],
