@@ -114,5 +114,26 @@ class ContactSection extends StatelessWidget {
         ),
       ],
     );
+  },
+
+
+  Row buildnameEmailFieldMobile() {
+    return Row(
+      children: [
+        // name
+        Flexible(
+          child: CustomTextField(
+            hintText: "Your name",
+          ),
+        ),
+        const SizedBox(width: 15.0,),
+        // email
+        Flexible(
+          child: CustomTextField(
+            hintText: "Your email",
+          ),
+        ),
+      ],
+    );
   }
 }
