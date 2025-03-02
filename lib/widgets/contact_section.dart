@@ -92,7 +92,7 @@ class ContactSection extends StatelessWidget {
             children: [
               InkWell(
                   onTap: (){
-                    js.context.callMethod('open', [SnsLinks.github]);
+                    js.context.callMethod('open', [SnsLinks.linkdin]);
                   },
                   child: Image.asset(
                     "assets/social/link-din.png",
@@ -101,7 +101,7 @@ class ContactSection extends StatelessWidget {
 
               InkWell(
                   onTap: (){
-                    js.context.callMethod('open', [SnsLinks.linkdin]);
+                    js.context.callMethod('open', [SnsLinks.github]);
                   },
                   child: Image.asset(
                     "assets/social/github.png",
