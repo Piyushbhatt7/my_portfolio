@@ -106,8 +106,9 @@ class _HomePageState extends State<HomePage> {
 
               // FOOTER   
               Container(
-                height: 500,
+                height: 300,
                 width: double.maxFinite,
+                child: Text("Made by Piyush Bhatt with Flutter"),
   
               ),
             ], 
