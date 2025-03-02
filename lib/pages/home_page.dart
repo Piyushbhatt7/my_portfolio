@@ -152,6 +152,9 @@ class _HomePageState extends State<HomePage> {
 
                     // send button
                     ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: 700
+                      ),
                       child: SizedBox(
                         width: double.maxFinite,
                         child: ElevatedButton(onPressed: (){},
