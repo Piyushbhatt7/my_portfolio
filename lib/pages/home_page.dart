@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
 
                 // SKILLS
                 Container(
-
+                  key: navbarKeys[1],
                   width: screenWidth,
                   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                   color: CustomColor.bgLight1,
@@ -89,17 +89,17 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                                   const SizedBox(height: 30.0,),
-                                   // PROJECTS
-                                   const ProjectsSection(),
+                const SizedBox(height: 30.0,),
+                // PROJECTS
+                ProjectsSection(key: navbarKeys[2],),
                 const SizedBox(height: 30.0,),
 
                 // CONTACT
-                ContactSection(),
+                ContactSection(key: navbarKeys[3],),
                 const SizedBox(height: 30.0,),
 
                 // FOOTER
-                                   Footer(),
+                Footer(),
               ],
             ),
           )
