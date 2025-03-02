@@ -168,9 +168,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
+                  const SizedBox(height: 30,),
+
                   ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxWidth: 700
+                      maxWidth: 300
                     ),
                       child: const Divider()
                   ),
