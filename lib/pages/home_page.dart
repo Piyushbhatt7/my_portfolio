@@ -108,7 +108,8 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 300,
                 width: double.maxFinite,
-                child: Text("Made by Piyush Bhatt with Flutter"),
+                alignment: Alignment.center,
+                child: Text("Made by Piyush Bhatt with Flutter",),
   
               ),
             ], 
