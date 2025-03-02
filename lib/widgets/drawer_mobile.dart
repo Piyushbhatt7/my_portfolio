@@ -30,15 +30,17 @@ class DrawerMobile extends StatelessWidget {
 
           for(int i = 0; i < navIcons.length; i++)
           ListTile(
-            contentPadding:  EdgeInsets.symmetric(
+            contentPadding: const EdgeInsets.symmetric(
               horizontal: 30.0,
             ),
-            titleTextStyle:  TextStyle(
+            titleTextStyle: const TextStyle(
               color: CustomColor.whitePrimary,
               fontWeight: FontWeight.w600,
               fontSize: 16,
             ),
-            onTap: (){},
+            onTap: (){
+              onNavItemTap(){i},
+            },
             leading: Icon(navIcons[i]),
             title: Text(navTitles[i]),
           ),
