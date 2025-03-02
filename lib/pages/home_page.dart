@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 50.0,),
                     ConstrainedBox(
                       constraints: BoxConstraints(
-
+                        maxWidth: 700,
                       ),
                       child: Row(
                         children: [
