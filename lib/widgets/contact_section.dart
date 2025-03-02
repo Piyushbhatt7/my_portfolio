@@ -26,23 +26,7 @@ class ContactSection extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 700,
             ),
-            child: Row(
-              children: [
-                // name
-                Flexible(
-                  child: CustomTextField(
-                    hintText: "Your name",
-                  ),
-                ),
-                const SizedBox(width: 15.0,),
-                // email
-                Flexible(
-                  child: CustomTextField(
-                    hintText: "Your email",
-                  ),
-                ),
-              ],
-            ),
+            child:
           ),
 
           const SizedBox(height: 15.0,),
@@ -109,6 +93,26 @@ class ContactSection extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  Row buildnameEmailFieldDesktop() {
+    return Row(
+      children: [
+        // name
+        Flexible(
+          child: CustomTextField(
+            hintText: "Your name",
+          ),
+        ),
+        const SizedBox(width: 15.0,),
+        // email
+        Flexible(
+          child: CustomTextField(
+            hintText: "Your email",
+          ),
+        ),
+      ],
     );
   }
 }
