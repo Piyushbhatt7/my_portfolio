@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/size.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
@@ -26,7 +27,15 @@ class ContactSection extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 700,
             ),
-            child:
+            child: LayoutBuilder(
+                builder: (context, constraints)
+                    {
+                      if(constraints.maxWidth >= kMinDesktopWidth)
+                        {
+                          return buildnameEmailFieldDesktop();
+                        }
+                    }
+            )
           ),
 
           const SizedBox(height: 15.0,),
