@@ -42,6 +42,8 @@ class _HomePageState extends State<HomePage> {
               :  DrawerMobile(onNavItemTap: (int navIndex)
             {
               // call function
+              scaffoldKey.currentState?.closeEndDrawer();
+              scrollToSection(navIndex);
             },),
           body: SingleChildScrollView(
             controller: scrollController,
@@ -53,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                   HeaderDesktop(onNavMenuTap: (int navIndex)
                     {
                       // call function
+                      scrollToSection(navIndex);
                     },)
                 else
                   HeaderMobile(
@@ -129,7 +132,7 @@ class _HomePageState extends State<HomePage> {
 
     final key = navbarKeys[navIndex];
     Scrollable.ensureVisible(
-        context,
+      key.currentContext!,
         duration: const Duration(
             microseconds: 500),
         curve: Curves.easeInOut,
