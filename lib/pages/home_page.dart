@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 
               // MAIN 
 
-/*              if(constraints.maxWidth >= kMinDesktopWidth)
+              if(constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop() else
                 HeaderMobile(
                   onLogoTap: () {
@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
              const SizedBox(height: 30.0,),
              // PROJECTS
              const ProjectsSection(),
-              const SizedBox(height: 30.0,),*/
+              const SizedBox(height: 30.0,),
 
               // CONTACT
               ContactSection(),
