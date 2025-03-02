@@ -106,10 +106,10 @@ class _HomePageState extends State<HomePage> {
 
               // FOOTER   
               Container(
-                padding: EdgeInsets.symmetric(vertical: 20.0),
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
                 width: double.maxFinite,
                 alignment: Alignment.center,
-                child: Text("Made by Piyush Bhatt with Flutter 3.29",
+                child: const Text("Made by Piyush Bhatt with Flutter 3.29",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: CustomColor.whiteSecondary,
