@@ -123,7 +123,11 @@ class _HomePageState extends State<HomePage> {
     if(navIndex == 4)
       {
         // open a blog page
+
+        return;
       }
+
+    final key = navbarKeys[navIndex];
   }
 
 }
