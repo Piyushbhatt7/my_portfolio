@@ -50,11 +50,10 @@ class _HomePageState extends State<HomePage> {
               children: [
                  SizedBox(key: navbarKeys.first,),
                 if(constraints.maxWidth >= kMinDesktopWidth)
-                  const HeaderDesktop() else
+                 const HeaderDesktop()
+                else
                   HeaderMobile(
-                    onLogoTap: () {
-
-                    },
+                    onLogoTap: () {},
                     onMenuTap: () {
                        scaffoldKey.currentState?.openEndDrawer();
                     },
