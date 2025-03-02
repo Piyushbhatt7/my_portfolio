@@ -50,7 +50,10 @@ class _HomePageState extends State<HomePage> {
               children: [
                  SizedBox(key: navbarKeys.first,),
                 if(constraints.maxWidth >= kMinDesktopWidth)
-                 const HeaderDesktop()
+                  HeaderDesktop(onNavMenuTap: (int navIndex)
+                    {
+                      // call function
+                    },)
                 else
                   HeaderMobile(
                     onLogoTap: () {},
