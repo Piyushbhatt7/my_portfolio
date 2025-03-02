@@ -114,22 +114,27 @@ class _HomePageState extends State<HomePage> {
                       ),),
 
                     const SizedBox(height: 50.0,),
-                    Row(
-                      children: [
-                        // name
-                        Flexible(
-                          child: CustomTextField(
-                            hintText: "Your name",
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+
+                      ),
+                      child: Row(
+                        children: [
+                          // name
+                          Flexible(
+                            child: CustomTextField(
+                              hintText: "Your name",
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 15.0,),
-                        // email
-                        Flexible(
-                          child: CustomTextField(
-                            hintText: "Your email",
+                          const SizedBox(width: 15.0,),
+                          // email
+                          Flexible(
+                            child: CustomTextField(
+                              hintText: "Your email",
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     
                     const SizedBox(height: 15.0,),
