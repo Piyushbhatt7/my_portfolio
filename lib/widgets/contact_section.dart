@@ -100,7 +100,9 @@ class ContactSection extends StatelessWidget {
                   )),
 
               InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    js.context.callMethod('open', [SnsLinks.linkdin]);
+                  },
                   child: Image.asset(
                     "assets/social/github.png",
                     width: 32,
