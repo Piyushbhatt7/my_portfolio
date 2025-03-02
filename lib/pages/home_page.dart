@@ -167,12 +167,18 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 700
+                    ),
+                      child: const Divider()
+                  ),
+                    // SNS icon button liks
                   ],
                 ),
               ),
 
-
-                  
               // FOOTER   
               Container(
                 height: 500,
