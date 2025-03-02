@@ -12,7 +12,7 @@ class DrawerMobile extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue),
-            child: Icon(Icons.crop_square_sharp),
+            child: Icon(Icons.emoji_emotions_outlined),
           ),
           ListTile(
             leading: const Icon(Icons.home),
