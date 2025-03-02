@@ -22,5 +22,7 @@ class Assets {
   static const String projectsLogolove = 'assets/projects/logolove.png';
   static const String projectsMainlogo = 'assets/projects/mainlogo.png';
   static const String projectsWhatsapp = 'assets/projects/whatsapp.png';
+  static const String socialDownload = 'assets/social/download.png';
+  static const String socialLinkDin = 'assets/social/link-din.png';
 
 }

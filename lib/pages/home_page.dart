@@ -176,7 +176,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                       child: const Divider()
                   ),
+                    const SizedBox(height: 15,),
                     // SNS icon button liks
+                    
+                    Wrap(
+                      children: [
+                        Image.asset("assets/social/link-din"),
+                      ],
+                    )
                   ],
                 ),
               ),
