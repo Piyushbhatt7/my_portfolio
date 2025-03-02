@@ -139,9 +139,14 @@ class _HomePageState extends State<HomePage> {
                     
                     const SizedBox(height: 15.0,),
                     // message
-                    CustomTextField(
-                      hintText: "Your message",
-                      maxLine: 15,
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        maxWidth: 700
+                      ),
+                      child: CustomTextField(
+                        hintText: "Your message",
+                        maxLine: 15,
+                      ),
                     ),
                     const SizedBox(height: 20.0,),
 
