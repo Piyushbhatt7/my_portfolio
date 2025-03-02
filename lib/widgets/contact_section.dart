@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/size.dart';
-
+import 'dart:js' as js;
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
 
@@ -26,6 +26,7 @@ class ContactSection extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(
               maxWidth: 700,
+              maxHeight: 100,
             ),
             child: LayoutBuilder(
                 builder: (context, constraints)
@@ -89,7 +90,9 @@ class ContactSection extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    js.context.callMethod('open', [])
+                  },
                   child: Image.asset(
                     "assets/social/link-din.png",
                     width: 32,
@@ -126,7 +129,7 @@ class ContactSection extends StatelessWidget {
         ),
       ],
     );
-  },
+  }
 
 
   Row buildNameEmailFieldMobile() {
