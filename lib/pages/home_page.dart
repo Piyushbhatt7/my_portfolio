@@ -118,6 +118,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void scrollToSection(int navIndex)
+  {
+    if(navIndex == 4)
+      {
+        // open a blog page
+      }
+  }
 
 }
 
