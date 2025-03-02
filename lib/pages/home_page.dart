@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
 
               // CONTACT
               ContactSection(),
+              const SizedBox(height: 30.0,),
 
               // FOOTER   
               Container(

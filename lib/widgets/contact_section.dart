@@ -16,7 +16,7 @@ class ContactSection extends StatelessWidget {
       child: Column(
         children: [
           // title
-          Text("Get in touch",
+          const Text("Get in touch",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -69,7 +69,7 @@ class ContactSection extends StatelessWidget {
                     foregroundColor: CustomColor.whitePrimary,
                   ),
 
-                  child: Text("Get in touch")
+                  child: const Text("Get in touch")
               ),
             ),
           ),
