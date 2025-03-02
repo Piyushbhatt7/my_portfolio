@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: CustomColor.scaffoldBg,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
-              : const DrawerMobile(),
+              :  DrawerMobile(onNavItemTap: (int navIndex)
+            {
+              // call function
+            },),
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
