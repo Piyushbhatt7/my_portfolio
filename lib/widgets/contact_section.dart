@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/size.dart';
+import 'package:portfolio/constants/sns_links.dart';
 import 'dart:js' as js;
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
@@ -91,7 +92,7 @@ class ContactSection extends StatelessWidget {
             children: [
               InkWell(
                   onTap: (){
-                    js.context.callMethod('open', [])
+                    js.context.callMethod('open', [SnsLinks.github]);
                   },
                   child: Image.asset(
                     "assets/social/link-din.png",
