@@ -12,13 +12,13 @@ A **fully responsive** portfolio website built using **Flutter**. It works seaml
 - 🌐 **Deployed on Netlify** – Easily accessible online  
 
 ## 📷 Screenshots  
-- for mobile
+- For Mobile
 
 ![image](https://github.com/user-attachments/assets/b73242a2-6e4a-4494-8fac-6412faa4dc12)
 
-- for web
-- 
-- ![image](https://github.com/user-attachments/assets/b75e367c-5412-4db3-bbd2-0dc1c6324c36)
+- For Web
+ 
+![image](https://github.com/user-attachments/assets/b75e367c-5412-4db3-bbd2-0dc1c6324c36)
 
  
 
@@ -50,8 +50,9 @@ This project is **deployed on Netlify**. You can check it out live at:
 
 ## 📬 Contact  
 If you have any queries or feedback, feel free to connect:  
-📧 piyushbhatt162@gmail.com
-🔗 https://www.linkedin.com/in/piyush-bhatt-024221253/
+📧 Email :- piyushbhatt162@gmail.com 
+
+🔗 LinkdIn :- https://www.linkedin.com/in/piyush-bhatt-024221253/
 
 ---
 
