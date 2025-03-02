@@ -37,7 +37,9 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
+          endDrawer: constraints.maxWidth >= kMinDesktopWidth
+              ? null
+              : const DrawerMobile(),
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
