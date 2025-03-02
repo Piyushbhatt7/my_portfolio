@@ -181,7 +181,8 @@ class _HomePageState extends State<HomePage> {
                     
                     Wrap(
                       children: [
-                        Image.asset("assets/social/link-din"),
+                        Image.asset("assets/social/link-din.png", width: 28,),
+                        Image.asset("assets/social/github.png", width: 28,)
                       ],
                     )
                   ],
