@@ -180,9 +180,11 @@ class _HomePageState extends State<HomePage> {
                     // SNS icon button liks
                     
                     Wrap(
+                      spacing: 12,
+                      runSpacing: 12,
                       children: [
                         Image.asset("assets/social/link-din.png", width: 32,),
-                        const SizedBox(width: 10.0,),
+                       // const SizedBox(width: 10.0,),
                         Image.asset("assets/social/github.png", width: 32,)
                       ],
                     )
