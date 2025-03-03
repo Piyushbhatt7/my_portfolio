@@ -54,8 +54,8 @@ List<ProjectUtils> hobbyProjectUtils = [
     subtitle: "This is I try to cover the DSA concepts in JAVA",
     androidLink: "https://github.com/Piyushbhatt7/Advanced-Java",
   ),      
-     
-];  
+
+];   
 
 List<ProjectUtils> workProjectUtils = [
 
