@@ -55,7 +55,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     androidLink: "https://github.com/Piyushbhatt7/Advanced-Java",
   ),      
 
-];                       
+];                        
 
 List<ProjectUtils> workProjectUtils = [
 
