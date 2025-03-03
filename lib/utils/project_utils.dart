@@ -59,7 +59,7 @@ List<ProjectUtils> hobbyProjectUtils = [
 
 List<ProjectUtils> workProjectUtils = [
 
-  ProjectUtils(
+  ProjectUtils( 
     image: "assets/projects/bmi.jpg",
     title: "BMI - Calculator",
     subtitle: "This is a flutter base Body Mass Index Calculator",
