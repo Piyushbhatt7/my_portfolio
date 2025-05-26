@@ -67,10 +67,17 @@ List<ProjectUtils> workProjectUtils = [
   ),
 
   ProjectUtils(
-    image: "assets/projects/logo.png",
+    image: "assets/projects/per.jpg",
     title: "Housify (Room Renting App)",
-    subtitle: "This is a Housify which provides rooms, apartment for rent",
+    subtitle: "This imodel uses GEMINI FLASH API 3 to answer any questions",
     androidLink: "https://github.com/Piyushbhatt7/housify_app",
+  ),
+
+   ProjectUtils(
+    image: "assets/projects/logo.png",
+    title: "Perplexity Clone",
+    subtitle: "This project work same as a Perplexity AI",
+    androidLink: "https://github.com/Piyushbhatt7/Perplexity-Clone",
   ),
 
   ProjectUtils(
