@@ -6,6 +6,7 @@ import 'package:portfolio/widgets/contact_section.dart';
 import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
+import 'package:portfolio/widgets/hero_3d_section.dart';
 import 'package:portfolio/widgets/main_desktop.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/projects_section.dart';
@@ -65,6 +66,9 @@ class _HomePageState extends State<HomePage> {
                        scaffoldKey.currentState?.openEndDrawer();
                     },
                   ),
+
+                // Add the new 3D Hero Section
+                const Hero3DSection(),
 
                 if(constraints.maxWidth >= kMinDesktopWidth)
                 const MainDesktop() else const MainMobile(),
