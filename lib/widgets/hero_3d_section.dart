@@ -165,8 +165,8 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                   ),
                 ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                SizedBox(
-                  width: 120,
+                Padding(
+                  padding: const EdgeInsets.only(left: 550.0,),
                   child: TypingText(
                     words: ['Piyush Bhatt'],
                     style: GoogleFonts.aBeeZee(
@@ -195,42 +195,45 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                         ),
                       );
                     },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 30,
-                        vertical: 15,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            CustomColor.yellowPrimary,
-                            CustomColor.yellowPrimary.withOpacity(0.8),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 30,
+                          vertical: 15,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              CustomColor.yellowPrimary,
+                              CustomColor.yellowPrimary.withOpacity(0.8),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: CustomColor.yellowPrimary.withOpacity(0.3),
+                              blurRadius: 10,
+                              spreadRadius: 5,
+                            ),
                           ],
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: CustomColor.yellowPrimary.withOpacity(0.3),
-                            blurRadius: 10,
-                            spreadRadius: 2,
+                        child: Text(
+                          'View Resume',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: CustomColor.scaffoldBg,
                           ),
-                        ],
-                      ),
-                      child: Text(
-                        'View Resume',
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: CustomColor.scaffoldBg,
                         ),
-                      ),
-                    ).animate()
-                      .fadeIn(duration: const Duration(seconds: 1))
-                      .scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.0, 1.0),
-                        duration: const Duration(seconds: 1),
-                      ),
+                      ).animate()
+                        .fadeIn(duration: const Duration(seconds: 1))
+                        .scale(
+                          begin: const Offset(0.8, 0.8),
+                          end: const Offset(1.0, 1.0),
+                          duration: const Duration(seconds: 1),
+                        ),
+                    ),
                   ),
                 ),
               ],
