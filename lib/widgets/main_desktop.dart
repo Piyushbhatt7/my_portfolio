@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:portfolio/widgets/contact_section.dart';
 import 'package:typing_text/typing_text.dart';
 
@@ -66,11 +67,38 @@ class MainDesktop extends StatelessWidget {
           ),
 
           // Image widget
-          Image.asset(
-            "assets/android.png",
-            width: screenWidth / 2,
-            height: 200,
-          ),
+         ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: ModelViewer(
+                    src: 'assets/models/android.glb',
+                    alt: "Android is Hidden in Plain Sight",
+                    ar: false, 
+                    autoRotate: true, 
+                    cameraControls: false,       
+                    backgroundColor: Colors.transparent,               
+                    exposure: 1,
+                    shadowIntensity: 1,
+                    shadowSoftness: 1,
+                    cameraOrbit: '0deg 75deg 105%',
+                    interactionPrompt: InteractionPrompt.none,
+                    interactionPromptStyle: InteractionPromptStyle.basic,
+                    reveal: Reveal.auto,
+                    arModes: const [],
+                    arScale: ArScale.fixed,
+                    autoPlay: true,
+                    rotationPerSecond: "30deg",
+                    minCameraOrbit: "auto auto 50%",
+                    maxCameraOrbit: "auto auto 150%",
+                    minFieldOfView: "30deg",
+                    maxFieldOfView: "90deg",
+                    interpolationDecay: 200,
+                    touchAction: TouchAction.none,
+                    disableZoom: true,
+                    disablePan: true,
+                    disableTap: true,
+                    loading: Loading.eager,
+                  ),
+                ),
         ],
       ),
     );
