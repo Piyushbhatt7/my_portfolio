@@ -24,14 +24,19 @@ class MainDesktop extends StatelessWidget {
           /// ✅ Wrap the column with `Expanded` to provide bounded width
           Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start, // optional
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center, // optional
               children: [
-                Text("About me",
-                style: GoogleFonts.zenKurenaido(
-                  color: Colors.amberAccent
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Text("About me",
+                  style: GoogleFonts.palanquinDark(
+                    color: Colors.yellow
+                    ),
                   ),
                 ),
+
+              
                 
 
                 const SizedBox(height: 15),
