@@ -27,7 +27,7 @@ class MainDesktop extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start, // optional
               children: [
                 TypingText(
-                  words: const ['Android Developer'],
+                  words: const ['Hii my name is, Piyush Bhatt, and I am a Android Developer'],
                   style: GoogleFonts.poppins(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -35,17 +35,17 @@ class MainDesktop extends StatelessWidget {
                   ),
                   letterSpeed: const Duration(milliseconds: 100),
                 ),
-                const SizedBox(height: 10),
+                // const SizedBox(height: 10),
 
-                TypingText(
-                  words: const ['Android Developer'],
-                  style: GoogleFonts.poppins(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
-                  ),
-                  letterSpeed: const Duration(milliseconds: 100),
-                ),
+                // TypingText(
+                //   words: const ['Android Developer'],
+                //   style: GoogleFonts.poppins(
+                //     fontSize: 32,
+                //     fontWeight: FontWeight.bold,
+                //     color: CustomColor.whitePrimary,
+                //   ),
+                //   letterSpeed: const Duration(milliseconds: 100),
+                // ),
 
                 const SizedBox(height: 15),
 
