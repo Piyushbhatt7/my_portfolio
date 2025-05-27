@@ -27,29 +27,14 @@ class MainDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start, // optional
               children: [
-                TypingText(
-                  words: const ['I am a Android Developer'],
-                  style: GoogleFonts.zillaSlab(
-                    fontSize: 34,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
+                Text("About me",
+                style: GoogleFonts.zenKurenaido(
+                  color: Colors.amberAccent
                   ),
-                  letterSpeed: const Duration(milliseconds: 100),
                 ),
-              
-                const SizedBox(height: 15),
+                
 
-                SizedBox(
-                  width: 230,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: CustomColor.yellowPrimary,
-                      foregroundColor: CustomColor.whitePrimary,
-                    ),
-                    child: const Text("Get in touch"),
-                  ),
-                ),
+                const SizedBox(height: 15),
               ],
             ),
           ),
@@ -64,8 +49,8 @@ class MainDesktop extends StatelessWidget {
                         src: 'assets/models/android.glb',
                         alt: "Android is Hidden in Plain Sight",
                         ar: false, 
-                        autoRotate: true, 
-                        cameraControls: false,       
+                        autoRotate: false, 
+                        cameraControls: true,       
                         backgroundColor: Colors.transparent,               
                         exposure: 1,
                         shadowIntensity: 1,
