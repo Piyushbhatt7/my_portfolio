@@ -36,7 +36,7 @@ dependencies:
   typing_text: ^1.0.4
   vector_math: ^2.1.4
   flutter_gl: ^0.0.20
-  model_viewer_plus: ^1.7.0
+  model_viewer_plus: ^1.3.1
   syncfusion_flutter_pdfviewer: ^24.2.8
 
   # The following adds the Cupertino Icons font to your application.
