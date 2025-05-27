@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:typing_text/typing_text.dart';
 
 import '../constants/colors.dart';
 
@@ -25,7 +27,16 @@ class MainDesktop extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Hii, \nI'm Piyush Bhatt\n a Flutter Developer",
+                    TypingText(
+                  words: const ['Android Developer'],
+                  style: GoogleFonts.poppins(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColor.whitePrimary,
+                  ),
+                  letterSpeed: const Duration(milliseconds: 100),
+                  const SizedBox(height: 10),
+                ),const Text("Hii, \nI'm Piyush Bhatt\n a Flutter Developer",
                       style: TextStyle(
                         fontSize: 30,
                         height: 1.5,
@@ -33,6 +44,8 @@ class MainDesktop extends StatelessWidget {
                         color: CustomColor.whitePrimary,
                       ),
                     ),
+
+                    const SizedBox(height: 10),
 
                     const SizedBox(height: 15,),
                     SizedBox(
