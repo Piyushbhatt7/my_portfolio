@@ -86,119 +86,53 @@ class _ResumeViewerState extends State<ResumeViewer> {
         ],
       ),
       body: Stack(
-        children: [
-          // PDF Viewer
-          // SfPdfViewer.network(
-          //   'https://turquoise-merridie-57.tiiny.site/',
-          //   controller: _pdfViewerController,
-          //   enableDoubleTapZooming: true,
-          //   enableTextSelection: true,
-          //   pageSpacing: 0,
-          //   canShowScrollHead: true,
-          //   canShowScrollStatus: true,
-          //   pageLayoutMode: PdfPageLayoutMode.single,
-          //   scrollDirection: PdfScrollDirection.vertical,
-          //   onZoomLevelChanged: (PdfZoomDetails details) {
-          //     setState(() {
-          //       _currentZoomLevel = details.newZoomLevel;
-          //     });
-          //   },
-          //   onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
-          //     setState(() {
-          //       _error = 'Failed to load PDF: ${details.error}';
-          //       _isLoading = false;
-          //     });
-          //   },
-          //   onDocumentLoaded: (PdfDocumentLoadedDetails details) {
-          //     setState(() {
-          //       _isLoading = false;
-          //       _error = null;
-          //     });
-          //   },
-          // ),
-
-         PDF().cachedFromUrl(
-             'https://drive.google.com/file/d/1w-qYKf5k3J5c3E57gpuzmeBg4rT38lwj/view?usp=sharing',
-             placeholder: (progress) => Center(child: Text('$progress %')),
-             errorWidget: (error) => Center(child: Text(error.toString())),
-           ),
-          // Loading indicator
-          if (_isLoading)
-            const Center(
-              child: CircularProgressIndicator(
-                color: CustomColor.yellowPrimary,
-              ),
-            ),
-          // Error message
-          if (_error != null)
-            Center(
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: CustomColor.bgLight1,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.error_outline,
-                      color: Colors.red,
-                      size: 48,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      _error!,
-                      style: const TextStyle(color: Colors.white),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _isLoading = true;
-                              _error = null;
-                            });
-                          },
-                          child: const Text('Retry'),
-                        ),
-                        const SizedBox(width: 16),
-                        ElevatedButton(
-                          onPressed: _openInBrowser,
-                          child: const Text('Open in Browser'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          // Zoom level indicator
-          if (!_isLoading && _error == null)
-            Positioned(
-              bottom: 16,
-              right: 16,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                decoration: BoxDecoration(
-                  color: CustomColor.bgLight1.withOpacity(0.8),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  '${(_currentZoomLevel * 100).toStringAsFixed(0)}%',
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
-                ),
-              ),
-            ),
-        ],
+  children: [
+    if (widget.isAssets)
+      const PDF().fromAsset(
+        'assets/resume.pdf',
+        placeholder: (progress) => Center(child: Text('$progress %')),
+        errorWidget: (error) => Center(child: Text(error.toString())),
+      )
+    else
+      const PDF().cachedFromUrl(
+        'https://drive.google.com/file/d/1w-qYKf5k3J5c3E57gpuzmeBg4rT38lwj/view?usp=sharing',
+        placeholder: (progress) => Center(child: Text('$progress %')),
+        errorWidget: (error) => Center(child: Text(error.toString())),
       ),
+
+    // Loading Indicator
+    if (_isLoading)
+      const Center(
+        child: CircularProgressIndicator(
+          color: CustomColor.yellowPrimary,
+        ),
+      ),
+
+    // Error message handling (optional for local asset, more relevant for URL)
+    if (_error != null)
+      // your error widget...
+      const SizedBox(),
+
+    // Zoom level indicator (not functional for asset view using flutter_cached_pdfview)
+    if (!_isLoading && _error == null && !widget.isAssets)
+      Positioned(
+        bottom: 16,
+        right: 16,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            color: CustomColor.bgLight1.withOpacity(0.8),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            '${(_currentZoomLevel * 100).toStringAsFixed(0)}%',
+            style: const TextStyle(color: Colors.white, fontSize: 14),
+          ),
+        ),
+      ),
+  ],
+),
+
     );
   }
 }
