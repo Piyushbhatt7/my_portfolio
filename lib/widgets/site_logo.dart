@@ -12,12 +12,12 @@ class SiteLogo extends StatelessWidget {
     return  GestureDetector(
       onTap: onTap,
       child: Text(
-        "Piyush",
+        "Portfolio",
         style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
-            decoration: TextDecoration.underline,
-            color: CustomColor.yellowSecondary
+            //decoration: TextDecoration.underline,
+            color: Color.fromARGB(255, 245, 164, 24)
         ),),
     );
   }
