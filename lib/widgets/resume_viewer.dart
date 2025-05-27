@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class ResumeViewer extends StatefulWidget {
-  const ResumeViewer({super.key});
+  final bool isAssets;
+  const ResumeViewer({super.key, required this.isAssets});
 
   @override
   State<ResumeViewer> createState() => _ResumeViewerState();
@@ -86,34 +88,40 @@ class _ResumeViewerState extends State<ResumeViewer> {
       body: Stack(
         children: [
           // PDF Viewer
-          SfPdfViewer.network(
-            'https://turquoise-merridie-57.tiiny.site/',
-            controller: _pdfViewerController,
-            enableDoubleTapZooming: true,
-            enableTextSelection: true,
-            pageSpacing: 0,
-            canShowScrollHead: true,
-            canShowScrollStatus: true,
-            pageLayoutMode: PdfPageLayoutMode.single,
-            scrollDirection: PdfScrollDirection.vertical,
-            onZoomLevelChanged: (PdfZoomDetails details) {
-              setState(() {
-                _currentZoomLevel = details.newZoomLevel;
-              });
-            },
-            onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
-              setState(() {
-                _error = 'Failed to load PDF: ${details.error}';
-                _isLoading = false;
-              });
-            },
-            onDocumentLoaded: (PdfDocumentLoadedDetails details) {
-              setState(() {
-                _isLoading = false;
-                _error = null;
-              });
-            },
-          ),
+          // SfPdfViewer.network(
+          //   'https://turquoise-merridie-57.tiiny.site/',
+          //   controller: _pdfViewerController,
+          //   enableDoubleTapZooming: true,
+          //   enableTextSelection: true,
+          //   pageSpacing: 0,
+          //   canShowScrollHead: true,
+          //   canShowScrollStatus: true,
+          //   pageLayoutMode: PdfPageLayoutMode.single,
+          //   scrollDirection: PdfScrollDirection.vertical,
+          //   onZoomLevelChanged: (PdfZoomDetails details) {
+          //     setState(() {
+          //       _currentZoomLevel = details.newZoomLevel;
+          //     });
+          //   },
+          //   onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+          //     setState(() {
+          //       _error = 'Failed to load PDF: ${details.error}';
+          //       _isLoading = false;
+          //     });
+          //   },
+          //   onDocumentLoaded: (PdfDocumentLoadedDetails details) {
+          //     setState(() {
+          //       _isLoading = false;
+          //       _error = null;
+          //     });
+          //   },
+          // ),
+
+         PDF().cachedFromUrl(
+             'https://drive.google.com/file/d/1w-qYKf5k3J5c3E57gpuzmeBg4rT38lwj/view?usp=sharing',
+             placeholder: (progress) => Center(child: Text('$progress %')),
+             errorWidget: (error) => Center(child: Text(error.toString())),
+           ),
           // Loading indicator
           if (_isLoading)
             const Center(
