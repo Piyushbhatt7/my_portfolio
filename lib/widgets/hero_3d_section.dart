@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:typing_text/typing_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
@@ -102,17 +103,27 @@ class Hero3DSection extends StatelessWidget {
                   ),
 
                 const SizedBox(height: 30),
+                Text(
+                  'Hii, Myself',
+                  style: GoogleFonts.poppins(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w300,
+                    color: CustomColor.whitePrimary,
+                  ),
+                ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                // Typing Text Animation using typing_text
-                // TypingText(
-                //   words: const ['Android Developer'],
-                //   style: GoogleFonts.poppins(
-                //     fontSize: 32,
-                //     fontWeight: FontWeight.bold,
-                //     color: CustomColor.whitePrimary,
-                //   ),
-                //   letterSpeed: const Duration(milliseconds: 100),
-                // ),
+                Text(
+                  'Piyush Bhatt',
+                  style: GoogleFonts.aBeeZee(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColor.yellowPrimary,
+                  ),
+                ).animate()
+                .fadeIn(
+                  duration: const Duration(
+                    seconds: 1),
+                ),
 
                 const SizedBox(height: 20),
 
@@ -143,7 +154,7 @@ class Hero3DSection extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                         boxShadow: [
                           BoxShadow(
-                            color: CustomColor.whitePrimary.withOpacity(0.3),
+                            color: CustomColor.yellowPrimary.withOpacity(0.3),
                             blurRadius: 10,
                             spreadRadius: 2,
                           ),
