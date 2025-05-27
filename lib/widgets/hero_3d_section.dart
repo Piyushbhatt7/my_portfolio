@@ -105,15 +105,15 @@ class Hero3DSection extends StatelessWidget {
                 const SizedBox(height: 30),
 
                 // Typing Text Animation using typing_text
-                TypingText(
-                  words: const ['Android Developer'],
-                  style: GoogleFonts.poppins(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
-                  ),
-                  letterSpeed: const Duration(milliseconds: 100),
-                ),
+                // TypingText(
+                //   words: const ['Android Developer'],
+                //   style: GoogleFonts.poppins(
+                //     fontSize: 32,
+                //     fontWeight: FontWeight.bold,
+                //     color: CustomColor.whitePrimary,
+                //   ),
+                //   letterSpeed: const Duration(milliseconds: 100),
+                // ),
 
                 const SizedBox(height: 20),
 
