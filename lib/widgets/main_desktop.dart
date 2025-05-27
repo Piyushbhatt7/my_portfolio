@@ -35,15 +35,19 @@ class MainDesktop extends StatelessWidget {
                     color: CustomColor.whitePrimary,
                   ),
                   letterSpeed: const Duration(milliseconds: 100),
-                  const SizedBox(height: 10),
-                ),const Text("Hii, \nI'm Piyush Bhatt\n a Flutter Developer",
-                      style: TextStyle(
-                        fontSize: 30,
-                        height: 1.5,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary,
-                      ),
-                    ),
+
+                ),
+                const SizedBox(height: 10),
+                
+                TypingText(
+                  words: const ['Android Developer'],
+                  style: GoogleFonts.poppins(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColor.whitePrimary,
+                  ),
+                  letterSpeed: const Duration(milliseconds: 100),
+                ),
 
                     const SizedBox(height: 10),
 
