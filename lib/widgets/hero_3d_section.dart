@@ -181,6 +181,39 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                   ),
                 ),
 
+
+                 Padding(
+                   padding: const EdgeInsets.only(left: 500.0),
+                   child: TypingText(
+                     words: ['I am a'],
+                     style: GoogleFonts.aBeeZee(
+                       fontSize: 32,
+                       fontWeight: FontWeight.bold,
+                       color: CustomColor.yellowPrimary,
+                     ),
+                   ).animate()
+                   .fadeIn(
+                     duration: const Duration(
+                       seconds: 1),
+                   ),
+                 ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 550.0),
+                    child: TypingText(
+                      words: ['Web and Android Developer'],
+                      style: GoogleFonts.aBeeZee(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.yellowPrimary,
+                      ),
+                    ).animate()
+                    .fadeIn(
+                      duration: const Duration(
+                        seconds: 1),
+                    ),
+                  ),
+
                 const SizedBox(height: 20),
 
                 // Resume Button with Hover Effect
