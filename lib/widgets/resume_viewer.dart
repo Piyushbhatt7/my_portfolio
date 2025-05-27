@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ResumeViewer extends StatefulWidget {
   const ResumeViewer({super.key});
@@ -27,21 +28,39 @@ class _ResumeViewerState extends State<ResumeViewer> {
     super.dispose();
   }
 
+  Future<void> _openInBrowser() async {
+    final Uri url = Uri.parse('https://turquoise-merridie-57.tiiny.site/');
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Could not open resume in browser'),
+            backgroundColor: CustomColor.bgLight1,
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColor.scaffoldBg,
       appBar: AppBar(
-        title: const Text(
-          'My Resume',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('My Resume', style: TextStyle(color: Colors.white)),
         backgroundColor: CustomColor.bgLight1,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
         actions: [
+          // Open in browser button
+          IconButton(
+            icon: const Icon(Icons.open_in_browser, color: Colors.white),
+            onPressed: _openInBrowser,
+          ),
           // Zoom out button
           IconButton(
             icon: const Icon(Icons.zoom_out, color: Colors.white),
@@ -62,33 +81,21 @@ class _ResumeViewerState extends State<ResumeViewer> {
               });
             },
           ),
-          // Download button
-          IconButton(
-            icon: const Icon(Icons.download, color: Colors.white),
-            onPressed: () {
-              // TODO: Implement download functionality
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Download functionality coming soon!'),
-                  backgroundColor: CustomColor.bgLight1,
-                ),
-              );
-            },
-          ),
         ],
       ),
       body: Stack(
         children: [
           // PDF Viewer
-          SfPdfViewer.asset('assets/resume.pdf',
-            // controller: _pdfViewerController,
-            // enableDoubleTapZooming: true,
-            // enableTextSelection: true,
-            // pageSpacing: 0,
-            // canShowScrollHead: true,
-            // canShowScrollStatus: true,
-            // pageLayoutMode: PdfPageLayoutMode.single,
-            // scrollDirection: PdfScrollDirection.vertical,
+          SfPdfViewer.network(
+            'https://turquoise-merridie-57.tiiny.site/',
+            controller: _pdfViewerController,
+            enableDoubleTapZooming: true,
+            enableTextSelection: true,
+            pageSpacing: 0,
+            canShowScrollHead: true,
+            canShowScrollStatus: true,
+            pageLayoutMode: PdfPageLayoutMode.single,
+            scrollDirection: PdfScrollDirection.vertical,
             onZoomLevelChanged: (PdfZoomDetails details) {
               setState(() {
                 _currentZoomLevel = details.newZoomLevel;
@@ -139,14 +146,24 @@ class _ResumeViewerState extends State<ResumeViewer> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          _isLoading = true;
-                          _error = null;
-                        });
-                      },
-                      child: const Text('Retry'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              _isLoading = true;
+                              _error = null;
+                            });
+                          },
+                          child: const Text('Retry'),
+                        ),
+                        const SizedBox(width: 16),
+                        ElevatedButton(
+                          onPressed: _openInBrowser,
+                          child: const Text('Open in Browser'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -158,17 +175,17 @@ class _ResumeViewerState extends State<ResumeViewer> {
               bottom: 16,
               right: 16,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: CustomColor.bgLight1.withOpacity(0.8),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   '${(_currentZoomLevel * 100).toStringAsFixed(0)}%',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
             ),
@@ -176,4 +193,4 @@ class _ResumeViewerState extends State<ResumeViewer> {
       ),
     );
   }
-} 
+}
