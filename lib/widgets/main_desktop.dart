@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/widgets/contact_section.dart';
 import 'package:typing_text/typing_text.dart';
 
 import '../constants/colors.dart';
@@ -27,9 +28,9 @@ class MainDesktop extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start, // optional
               children: [
                 TypingText(
-                  words: const ['Hii my name is, Piyush Bhatt, and I am a Android Developer'],
-                  style: GoogleFonts.poppins(
-                    fontSize: 32,
+                  words: const ['I am a Android Developer'],
+                  style: GoogleFonts.zillaSlab(
+                    fontSize: 34,
                     fontWeight: FontWeight.bold,
                     color: CustomColor.whitePrimary,
                   ),
@@ -52,7 +53,9 @@ class MainDesktop extends StatelessWidget {
                 SizedBox(
                   width: 230,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ContactSection()));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: CustomColor.yellowPrimary,
                       foregroundColor: CustomColor.whitePrimary,
