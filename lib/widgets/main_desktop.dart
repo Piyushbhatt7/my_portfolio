@@ -53,9 +53,7 @@ class MainDesktop extends StatelessWidget {
                 SizedBox(
                   width: 230,
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ContactSection()));
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: CustomColor.yellowPrimary,
                       foregroundColor: CustomColor.whitePrimary,
