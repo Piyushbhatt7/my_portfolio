@@ -25,7 +25,7 @@ class MainDesktop extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center, // optional
+              crossAxisAlignment: CrossAxisAlignment.start, // optional
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 40.0),
