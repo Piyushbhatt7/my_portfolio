@@ -81,7 +81,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                   child: ModelViewer(
                     src: 'assets/models/ai_model.glb',
                     alt: "AI is Hidden in Plain Sight",
-                    ar: false,
+                    ar: false, 
                     autoRotate: true,
                     cameraControls: false,
                     backgroundColor: Colors.transparent,
