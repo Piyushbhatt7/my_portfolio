@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
-import 'package:portfolio/widgets/contact_section.dart';
 import 'package:typing_text/typing_text.dart';
 
 import '../constants/colors.dart';
@@ -37,18 +36,7 @@ class MainDesktop extends StatelessWidget {
                   ),
                   letterSpeed: const Duration(milliseconds: 100),
                 ),
-                // const SizedBox(height: 10),
-
-                // TypingText(
-                //   words: const ['Android Developer'],
-                //   style: GoogleFonts.poppins(
-                //     fontSize: 32,
-                //     fontWeight: FontWeight.bold,
-                //     color: CustomColor.whitePrimary,
-                //   ),
-                //   letterSpeed: const Duration(milliseconds: 100),
-                // ),
-
+              
                 const SizedBox(height: 15),
 
                 SizedBox(
