@@ -57,7 +57,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
       ),
       child: Stack(
         children: [
-          // 3D Model Viewer (GLB/GLTF)
+          // 3D Model Viewer
           Positioned(
             top: 40,
             left: 40,
@@ -79,22 +79,21 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: ModelViewer(
-                    src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-                    alt: "A 3D model of an astronaut",
+                    src: 'assets/models/ai_model.glb',
+                    alt: "AI is Hidden in Plain Sight",
                     ar: false,
                     autoRotate: true,
-                    cameraControls: true,
+                    cameraControls: false,
                     backgroundColor: Colors.transparent,
                     exposure: 1,
                     shadowIntensity: 1,
                     shadowSoftness: 1,
                     cameraOrbit: '0deg 75deg 105%',
-                    interactionPrompt: InteractionPrompt.auto,
+                    interactionPrompt: InteractionPrompt.none,
                     interactionPromptStyle: InteractionPromptStyle.basic,
                     reveal: Reveal.auto,
-                    arModes: const ['webxr', 'scene-viewer', 'quick-look'],
+                    arModes: const [],
                     arScale: ArScale.fixed,
-                    animationName: "Take 001",
                     autoPlay: true,
                     rotationPerSecond: "30deg",
                     minCameraOrbit: "auto auto 50%",
@@ -102,12 +101,11 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                     minFieldOfView: "30deg",
                     maxFieldOfView: "90deg",
                     interpolationDecay: 200,
-                    touchAction: TouchAction.panY,
-                    disableZoom: false,
-                    disablePan: false,
-                    disableTap: false,
+                    touchAction: TouchAction.none,
+                    disableZoom: true,
+                    disablePan: true,
+                    disableTap: true,
                     loading: Loading.eager,
-                    poster: "assets/profile.jpg",
                   ),
                 ),
               ),
