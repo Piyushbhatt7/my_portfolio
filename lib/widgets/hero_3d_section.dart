@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:typing_text/typing_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
