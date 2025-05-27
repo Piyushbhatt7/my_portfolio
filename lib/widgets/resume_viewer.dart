@@ -12,6 +12,8 @@ class ResumeViewer extends StatefulWidget {
 class _ResumeViewerState extends State<ResumeViewer> {
   late PdfViewerController _pdfViewerController;
   double _currentZoomLevel = 1.0;
+  bool _isLoading = true;
+  String? _error;
 
   @override
   void initState() {
@@ -35,6 +37,10 @@ class _ResumeViewerState extends State<ResumeViewer> {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: CustomColor.bgLight1,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
         actions: [
           // Zoom out button
           IconButton(
@@ -74,8 +80,8 @@ class _ResumeViewerState extends State<ResumeViewer> {
       body: Stack(
         children: [
           // PDF Viewer
-          SfPdfViewer.asset(
-            'assets/resume.pdf',
+          SfPdfViewer.network(
+            'https://drive.google.com/uc?export=view=1w-qYKf5k3J5c3E57gpuzmeBg4rT38lwj',
             controller: _pdfViewerController,
             enableDoubleTapZooming: true,
             enableTextSelection: true,
@@ -89,26 +95,84 @@ class _ResumeViewerState extends State<ResumeViewer> {
                 _currentZoomLevel = details.newZoomLevel;
               });
             },
+            onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+              setState(() {
+                _error = 'Failed to load PDF: ${details.error}';
+                _isLoading = false;
+              });
+            },
+            onDocumentLoaded: (PdfDocumentLoadedDetails details) {
+              setState(() {
+                _isLoading = false;
+                _error = null;
+              });
+            },
           ),
-          // Zoom level indicator
-          Positioned(
-            bottom: 16,
-            right: 16,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: CustomColor.bgLight1.withOpacity(0.8),
-                borderRadius: BorderRadius.circular(20),
+          // Loading indicator
+          if (_isLoading)
+            const Center(
+              child: CircularProgressIndicator(
+                color: CustomColor.yellowPrimary,
               ),
-              child: Text(
-                '${(_currentZoomLevel * 100).toStringAsFixed(0)}%',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
+            ),
+          // Error message
+          if (_error != null)
+            Center(
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: CustomColor.bgLight1,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.error_outline,
+                      color: Colors.red,
+                      size: 48,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      _error!,
+                      style: const TextStyle(color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          _isLoading = true;
+                          _error = null;
+                        });
+                      },
+                      child: const Text('Retry'),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
+          // Zoom level indicator
+          if (!_isLoading && _error == null)
+            Positioned(
+              bottom: 16,
+              right: 16,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: CustomColor.bgLight1.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  '${(_currentZoomLevel * 100).toStringAsFixed(0)}%',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );
