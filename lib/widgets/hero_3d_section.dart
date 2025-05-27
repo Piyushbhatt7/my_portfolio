@@ -84,7 +84,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                     ar: false, 
                     autoRotate: true, 
                     cameraControls: false,       
-                    backgroundColor: Colors.transparent, 
+                    backgroundColor: Colors.transparent,  
                     exposure: 1,
                     shadowIntensity: 1,
                     shadowSoftness: 1,
