@@ -165,17 +165,20 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                   ),
                 ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                Text(
-                  'Piyush Bhatt',
-                  style: GoogleFonts.aBeeZee(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.yellowPrimary,
+                SizedBox(
+                  width: 120,
+                  child: TypingText(
+                    words: ['Piyush Bhatt'],
+                    style: GoogleFonts.aBeeZee(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.yellowPrimary,
+                    ),
+                  ).animate()
+                  .fadeIn(
+                    duration: const Duration(
+                      seconds: 1),
                   ),
-                ).animate()
-                .fadeIn(
-                  duration: const Duration(
-                    seconds: 1),
                 ),
 
                 const SizedBox(height: 20),
@@ -204,7 +207,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                             CustomColor.yellowPrimary.withOpacity(0.8),
                           ],
                         ),
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
                             color: CustomColor.yellowPrimary.withOpacity(0.3),
@@ -216,7 +219,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                       child: Text(
                         'View Resume',
                         style: GoogleFonts.poppins(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: CustomColor.scaffoldBg,
                         ),
