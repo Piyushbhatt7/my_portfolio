@@ -80,16 +80,15 @@ class _ResumeViewerState extends State<ResumeViewer> {
       body: Stack(
         children: [
           // PDF Viewer
-          SfPdfViewer.network(
-            'https://drive.google.com/uc?export=view=1w-qYKf5k3J5c3E57gpuzmeBg4rT38lwj',
-            controller: _pdfViewerController,
-            enableDoubleTapZooming: true,
-            enableTextSelection: true,
-            pageSpacing: 0,
-            canShowScrollHead: true,
-            canShowScrollStatus: true,
-            pageLayoutMode: PdfPageLayoutMode.single,
-            scrollDirection: PdfScrollDirection.vertical,
+          SfPdfViewer.asset('assets/resume.pdf',
+            // controller: _pdfViewerController,
+            // enableDoubleTapZooming: true,
+            // enableTextSelection: true,
+            // pageSpacing: 0,
+            // canShowScrollHead: true,
+            // canShowScrollStatus: true,
+            // pageLayoutMode: PdfPageLayoutMode.single,
+            // scrollDirection: PdfScrollDirection.vertical,
             onZoomLevelChanged: (PdfZoomDetails details) {
               setState(() {
                 _currentZoomLevel = details.newZoomLevel;
