@@ -12,22 +12,21 @@ class MainDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
-    
-    return LayoutBuilder(
-        builder: (context, constraints) {
-          child:
-          return Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20.0),
-            height: screenHeight / 1.2,
-            constraints: const BoxConstraints(minWidth: 350.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20.0),
+      height: screenHeight / 1.2,
+      constraints: const BoxConstraints(minWidth: 350.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          /// ✅ Wrap the column with `Expanded` to provide bounded width
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start, // optional
               children: [
-                // intro message
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TypingText(
+                TypingText(
                   words: const ['Android Developer'],
                   style: GoogleFonts.poppins(
                     fontSize: 32,
@@ -35,10 +34,9 @@ class MainDesktop extends StatelessWidget {
                     color: CustomColor.whitePrimary,
                   ),
                   letterSpeed: const Duration(milliseconds: 100),
-
                 ),
                 const SizedBox(height: 10),
-                
+
                 TypingText(
                   words: const ['Android Developer'],
                   style: GoogleFonts.poppins(
@@ -49,31 +47,31 @@ class MainDesktop extends StatelessWidget {
                   letterSpeed: const Duration(milliseconds: 100),
                 ),
 
-                    const SizedBox(height: 10),
+                const SizedBox(height: 15),
 
-                    const SizedBox(height: 15,),
-                    SizedBox(
-                      width: 230,
-                      child: ElevatedButton(onPressed: () {
-
-                      },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: CustomColor.yellowPrimary,
-                            foregroundColor: CustomColor.whitePrimary,
-                          ),
-                          child: const Text("Get in touch")
-                      ),
+                SizedBox(
+                  width: 230,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: CustomColor.yellowPrimary,
+                      foregroundColor: CustomColor.whitePrimary,
                     ),
-                  ],
+                    child: const Text("Get in touch"),
+                  ),
                 ),
-                Image.asset(
-                  "assets/android.png", width: screenWidth / 2, height: 200,)
               ],
             ),
-          );
+          ),
 
-        }
+          // Image widget
+          Image.asset(
+            "assets/android.png",
+            width: screenWidth / 2,
+            height: 200,
+          ),
+        ],
+      ),
     );
-
   }
 }
