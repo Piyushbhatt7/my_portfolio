@@ -6,8 +6,39 @@ import 'package:portfolio/constants/colors.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:portfolio/widgets/resume_viewer.dart';
 
-class Hero3DSection extends StatelessWidget {
+class Hero3DSection extends StatefulWidget {
   const Hero3DSection({super.key});
+
+  @override
+  State<Hero3DSection> createState() => _Hero3DSectionState();
+}
+
+class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 1.1,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    ));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,33 +105,43 @@ class Hero3DSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Profile Image with 3D effect
-                Container(
-                  width: 200,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: CustomColor.whitePrimary.withOpacity(0.2),
-                        blurRadius: 20,
-                        spreadRadius: 5,
+                AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    return Transform.scale(
+                      scale: _scaleAnimation.value,
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: CustomColor.whitePrimary.withOpacity(0.2),
+                              blurRadius: 20,
+                              spreadRadius: 5,
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image.asset(
+                            "assets/profile.jpg",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: Image.asset(
-                      "assets/profile.jpg",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                    );
+                  },
                 ).animate()
                   .fadeIn(duration: const Duration(seconds: 1))
                   .scale(
                     begin: const Offset(0.5, 0.5),
                     end: const Offset(1.0, 1.0),
                     duration: const Duration(seconds: 1),
-                  ),
+                  )
+                  .then()
+                  .shimmer(duration: const Duration(seconds: 2)),
 
                 const SizedBox(height: 30),
                 Text(
@@ -147,8 +188,8 @@ class Hero3DSection extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            CustomColor.whitePrimary,
-                            CustomColor.whitePrimary.withOpacity(0.8),
+                            CustomColor.yellowPrimary,
+                            CustomColor.yellowPrimary.withOpacity(0.8),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(30),
