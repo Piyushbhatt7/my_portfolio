@@ -168,6 +168,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                 Padding(
                   padding: const EdgeInsets.only(left: 550.0,),
                   child: TypingText(
+                    letterSpeed: const Duration(milliseconds: 200),
                     words: ['Piyush Bhatt'],
                     style: GoogleFonts.aBeeZee(
                       fontSize: 32,
@@ -183,13 +184,14 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
 
 
                  Padding(
-                   padding: const EdgeInsets.only(left: 500.0),
+                   padding: const EdgeInsets.only(left: 600.0),
                    child: TypingText(
+                    wordSpeed: const Duration(milliseconds: 100),
                      words: ['I am a'],
-                     style: GoogleFonts.aBeeZee(
-                       fontSize: 32,
+                     style: GoogleFonts.actor(
+                       fontSize: 25,
                        fontWeight: FontWeight.bold,
-                       color: CustomColor.yellowPrimary,
+                       color: CustomColor.whitePrimary,
                      ),
                    ).animate()
                    .fadeIn(
@@ -199,10 +201,11 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                  ),
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 550.0),
+                    padding: const EdgeInsets.only(left: 470.0),
                     child: TypingText(
+                      wordSpeed: const Duration(microseconds: 150),
                       words: ['Web and Android Developer'],
-                      style: GoogleFonts.aBeeZee(
+                      style: GoogleFonts.architectsDaughter(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                         color: CustomColor.yellowPrimary,
