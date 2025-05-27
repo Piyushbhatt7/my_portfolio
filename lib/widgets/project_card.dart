@@ -91,7 +91,7 @@ final ProjectUtils project;
                       js.context.callMethod("open", [project.androidLink]);
                     },
                     child: Image.asset(
-                      "assets/android_icon.png",
+                      "assets/android_icon.png", color: Colors.lightGreenAccent,
                       width: 18,)),
 
               ],
