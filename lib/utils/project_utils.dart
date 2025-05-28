@@ -60,10 +60,10 @@ List<ProjectUtils> hobbyProjectUtils = [
 List<ProjectUtils> workProjectUtils = [
 
   ProjectUtils( 
-    image: "assets/projects/bmi.jpg",
-    title: "BMI - Calculator",
-    subtitle: "This is a flutter base Body Mass Index Calculator",
-    androidLink: "https://github.com/Piyushbhatt7/BMI-Calculator-using-flutter",
+    image: "assets/projects/hero_image.png",
+    title: "DocBoard",
+    subtitle: "This Word Proccessing Application helps users to create, edit and manage documents",
+    androidLink: "https://github.com/Piyushbhatt7/DocBoard-",
   ),
 
   ProjectUtils(
@@ -92,6 +92,13 @@ List<ProjectUtils> workProjectUtils = [
     title: "Foodie (Food Delivery App)",
     subtitle: "This is a Food Delivey App provides food in minutes",
     androidLink: "https://github.com/Piyushbhatt7/Food_Delivery_App",
+  ),
+
+  ProjectUtils( 
+    image: "assets/projects/bmi.jpg",
+    title: "BMI - Calculator",
+    subtitle: "This is a flutter base Body Mass Index Calculator",
+    androidLink: "https://github.com/Piyushbhatt7/BMI-Calculator-using-flutter",
   ),
 
 
