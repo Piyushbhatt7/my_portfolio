@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:typing_text/typing_text.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../constants/colors.dart';
 
@@ -21,7 +22,6 @@ class MainDesktop extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          /// ✅ Wrap the column with `Expanded` to provide bounded width
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 30.0),
@@ -30,11 +30,12 @@ class MainDesktop extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "About me !",
+                      "About Me",
                       style: GoogleFonts.palanquinDark(
                         color: CustomColor.yellowPrimary,
-                        fontSize: 30,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
+                        letterSpacing: 1.2,
                         shadows: [
                           Shadow(
                             color: Colors.black.withOpacity(0.5),
@@ -43,50 +44,120 @@ class MainDesktop extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-                    const SizedBox(height: 15),
-                    TypingText(
-                      words: [
-                        'I come from a background where the odds weren’t in favor of a tech career —',
-                      ],
-                      style: GoogleFonts.openSans(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                    )
+                    .animate()
+                    .fadeIn(duration: 600.ms)
+                    .slideY(begin: -0.2, end: 0),
+                    const SizedBox(height: 20),
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: CustomColor.bgLight2.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: CustomColor.yellowPrimary.withOpacity(0.2),
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TypingText(
+                              words: ['From Humanities to Tech: My Journey'],
+                              style: GoogleFonts.openSans(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: CustomColor.yellowPrimary,
+                                letterSpacing: 0.5,
+                              ),
+                              wordSpeed: const Duration(milliseconds: 80),
+                            )
+                            .animate()
+                            .fadeIn(delay: 200.ms)
+                            .slideX(begin: -0.2, end: 0),
+                            const SizedBox(height: 15),
+                            Text(
+                              '''I come from a background where the odds weren't in favor of a tech career — a Humanities student with no formal coding foundation. But with unwavering determination and a strong desire to learn, I stepped into the world of technology and developed the skills to build cross-platform applications for any device.''',
+                              style: GoogleFonts.openSans(
+                                fontSize: 16,
+                                color: Colors.white,
+                                height: 1.6,
+                                letterSpacing: 0.3,
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 400.ms)
+                            .slideX(begin: -0.2, end: 0),
+                            const SizedBox(height: 20),
+                            Text(
+                              'My Mission',
+                              style: GoogleFonts.openSans(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: CustomColor.yellowPrimary,
+                                letterSpacing: 0.5,
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 600.ms)
+                            .slideX(begin: -0.2, end: 0),
+                            const SizedBox(height: 15),
+                            Text(
+                              '''What started as curiosity has grown into a clear purpose: to build solutions that drive real-world impact. I thrive in challenging environments that push my thinking and encourage continuous growth.''',
+                              style: GoogleFonts.openSans(
+                                fontSize: 16,
+                                color: Colors.white,
+                                height: 1.6,
+                                letterSpacing: 0.3,
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 800.ms)
+                            .slideX(begin: -0.2, end: 0),
+                            const SizedBox(height: 20),
+                            Text(
+                              'Looking Forward',
+                              style: GoogleFonts.openSans(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: CustomColor.yellowPrimary,
+                                letterSpacing: 0.5,
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 1000.ms)
+                            .slideX(begin: -0.2, end: 0),
+                            const SizedBox(height: 15),
+                            Text(
+                              '''With a strong foundation in Flutter development and a drive for innovation, I aim to build meaningful projects that solve problems and add value. This journey is just the beginning, and I'm committed to going even further — learning, building, and creating impact.''',
+                              style: GoogleFonts.openSans(
+                                fontSize: 16,
+                                color: Colors.white,
+                                height: 1.6,
+                                letterSpacing: 0.3,
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(delay: 1200.ms)
+                            .slideX(begin: -0.2, end: 0),
+                          ],
+                        ),
                       ),
-                      wordSpeed: const Duration(milliseconds: 80),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      '''Yes, a Humanities student with no formal coding foundation. 
-                      But with unwavering determination and a strong desire to learn, 
-                      I stepped into the world of technology and developed the skills to build cross-platform applications for any device.
-
-What started as curiosity has grown into a clear purpose: 
-to build solutions that drive real-world impact. 
-I thrive in challenging environments that push my thinking and encourage continuous growth.
-
-With a strong foundation in Flutter development and a drive for innovation, 
-I aim to build meaningful projects that solve problems and add value. 
-This journey is just the beginning ''',
-                      style: GoogleFonts.openSans(
-                        fontSize: 16,
-                        color: Colors.white,
-                        height: 1.6,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    TypingText(
-                      words: [
-                        'I’m committed to going even further — learning, building, and creating impact.'
-                            '',
-                      ],
-                      style: GoogleFonts.openSans(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                      wordSpeed: const Duration(milliseconds: 80),
+                    )
+                    .animate()
+                    .fadeIn(delay: 200.ms)
+                    .scale(
+                      begin: const Offset(0.95, 0.95),
+                      end: const Offset(1, 1),
+                      duration: 600.ms,
+                      curve: Curves.easeOutQuart,
+                    )
+                    .then()
+                    .shimmer(
+                      duration: 1200.ms,
+                      color: CustomColor.yellowPrimary.withOpacity(0.3),
                     ),
                   ],
                 ),
@@ -130,6 +201,14 @@ This journey is just the beginning ''',
                   loading: Loading.eager,
                 ),
               ),
+            )
+            .animate()
+            .fadeIn(delay: 400.ms)
+            .scale(
+              begin: const Offset(0.9, 0.9),
+              end: const Offset(1, 1),
+              duration: 800.ms,
+              curve: Curves.easeOutQuart,
             ),
           ),
         ],
