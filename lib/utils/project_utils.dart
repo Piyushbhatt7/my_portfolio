@@ -21,7 +21,7 @@ class ProjectUtils {
 List<ProjectUtils> hobbyProjectUtils = [
 
   ProjectUtils(
-    image: "assets/projects/insta.png",
+    image: "assets/social/insta.png",
     title: "Instagram Clone",
     subtitle: "This is a Instagram Frontend App",
     androidLink: "https://github.com/Piyushbhatt7/Instagram-Clone",
