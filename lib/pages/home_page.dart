@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/sns_links.dart';
@@ -14,6 +15,10 @@ import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
 import 'dart:js' as js;
 import '../widgets/drawer_mobile.dart';
+import '../constants/text_styles.dart';
+import '../widgets/about_section.dart';
+import '../widgets/drawer.dart';
+import '../widgets/hero_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,6 +31,26 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
   final List<GlobalKey> navbarKeys = List.generate(4, (index) => GlobalKey());
+  final ItemScrollController _itemScrollController = ItemScrollController();
+  final ItemPositionsListener _itemPositionsListener = ItemPositionsListener.create();
+  final List<String> _sectionKeys = ['home', 'about', 'skills', 'projects', 'contact'];
+  int _currentSection = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _itemPositionsListener.itemPositions.addListener(() {
+      final positions = _itemPositionsListener.itemPositions.value;
+      if (positions.isNotEmpty) {
+        final firstVisibleItem = positions.first.index;
+        if (_currentSection != firstVisibleItem) {
+          setState(() {
+            _currentSection = firstVisibleItem;
+          });
+        }
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,5 +169,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void _scrollToSection(int index) {
+    _itemScrollController.scrollTo(
+      index: index,
+      duration: const Duration(milliseconds: 800),
+      curve: Curves.easeInOutCubic,
+    );
+  }
 }
 
