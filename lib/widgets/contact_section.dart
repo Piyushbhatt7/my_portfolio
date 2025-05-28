@@ -197,12 +197,32 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                                           color: CustomColor.whitePrimary,
                                         ),
                                       ),
-                                      IconButton(
-                                        onPressed: _hideForm,
-                                        icon: const Icon(
-                                          Icons.close,
-                                          color: CustomColor.whitePrimary,
-                                        ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Press ESC to close",
+                                            style: TextStyle(
+                                              color: CustomColor.whitePrimary.withOpacity(0.7),
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 10),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              color: CustomColor.yellowPrimary.withOpacity(0.1),
+                                              borderRadius: BorderRadius.circular(8),
+                                            ),
+                                            child: IconButton(
+                                              onPressed: _hideForm,
+                                              icon: const Icon(
+                                                Icons.close,
+                                                color: CustomColor.yellowPrimary,
+                                                size: 24,
+                                              ),
+                                              tooltip: 'Close form (ESC)',
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
@@ -214,23 +234,36 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                                     maxLine: 15,
                                   ),
                                   const SizedBox(height: 20),
-                                  SizedBox(
-                                    width: double.maxFinite,
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        // Handle form submission
-                                        _hideForm();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: CustomColor.yellowPrimary,
-                                        foregroundColor: CustomColor.whitePrimary,
-                                        padding: const EdgeInsets.symmetric(vertical: 15),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            // Handle form submission
+                                            _hideForm();
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: CustomColor.yellowPrimary,
+                                            foregroundColor: CustomColor.whitePrimary,
+                                            padding: const EdgeInsets.symmetric(vertical: 15),
+                                          ),
+                                          child: const Text(
+                                            "Send Message",
+                                            style: TextStyle(fontSize: 16),
+                                          ),
+                                        ),
                                       ),
-                                      child: const Text(
-                                        "Send Message",
-                                        style: TextStyle(fontSize: 16),
+                                      const SizedBox(width: 10),
+                                      TextButton(
+                                        onPressed: _hideForm,
+                                        child: const Text(
+                                          "Cancel",
+                                          style: TextStyle(
+                                            color: CustomColor.whiteSecondary,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ],
                               ),
