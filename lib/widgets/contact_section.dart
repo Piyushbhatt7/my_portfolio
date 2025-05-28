@@ -127,18 +127,24 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                 onTap: () {
                   js.context.callMethod('open', [SnsLinks.linkdin]);
                 },
-                child: Image.asset(
-                  "assets/social/link-din.png",
-                  width: 32,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Image.asset(
+                    "assets/social/link-din.png",
+                    width: 35,
+                  ),
                 ),
               ),
               InkWell(
                 onTap: () {
                   js.context.callMethod('open', [SnsLinks.github]);
                 },
-                child: Image.asset(
-                  "assets/social/github.png",
-                  width: 32,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Image.asset(
+                    "assets/social/github.png",
+                    width: 35,
+                  ),
                 ),
               ),
 
