@@ -30,70 +30,69 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
-  final List<GlobalKey> navbarKeys = List.generate(4, (index) => GlobalKey());
-  final ItemScrollController _itemScrollController = ItemScrollController();
-  final ItemPositionsListener _itemPositionsListener = ItemPositionsListener.create();
-  final List<String> _sectionKeys = ['home', 'about', 'skills', 'projects', 'contact'];
+  final List<GlobalKey> navbarKeys = List.generate(5, (index) => GlobalKey());
   int _currentSection = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _itemPositionsListener.itemPositions.addListener(() {
-      final positions = _itemPositionsListener.itemPositions.value;
-      if (positions.isNotEmpty) {
-        final firstVisibleItem = positions.first.index;
-        if (_currentSection != firstVisibleItem) {
-          setState(() {
-            _currentSection = firstVisibleItem;
-          });
-        }
-      }
-    });
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      // open a blog page
+      js.context.callMethod('open', [SnsLinks.linkdin]);
+      return;
+    }
+
+    final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 800),
+      curve: Curves.easeInOutCubic,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-    final screeenHeight = screenSize.height; 
+    final screeenHeight = screenSize.height;
     return LayoutBuilder(
-      builder: (context, constraints)
-    {
-     // child:
-      return Scaffold(
-        key: scaffoldKey,
+      builder: (context, constraints) {
+        return Scaffold(
+          key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
           endDrawer: constraints.maxWidth < 600
-              ? CustomDrawer(onSectionSelected: _scrollToSection)
+              ? DrawerMobile(
+                  onNavItemTap: (int navIndex) {
+                    scaffoldKey.currentState?.closeEndDrawer();
+                    scrollToSection(navIndex);
+                  },
+                )
               : null,
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                 SizedBox(key: navbarKeys.first,),
-                if(constraints.maxWidth >= kMinDesktopWidth)
-                  HeaderDesktop(onNavMenuTap: (int navIndex)
-                    {
-                      // call function
-                      _scrollToSection(navIndex);
-                    },)
+                SizedBox(key: navbarKeys[0]),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  HeaderDesktop(
+                    onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  )
                 else
                   HeaderMobile(
                     onLogoTap: () {},
                     onMenuTap: () {
-                       scaffoldKey.currentState?.openEndDrawer();
+                      scaffoldKey.currentState?.openEndDrawer();
                     },
                   ),
 
                 // Add the new 3D Hero Section
                 const Hero3DSection(),
 
-                if(constraints.maxWidth >= kMinDesktopWidth)
-                const MainDesktop() else const MainMobile(),
-
-
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  const MainDesktop()
+                else
+                  const MainMobile(),
 
                 // SKILLS
                 Container(
@@ -105,70 +104,40 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // title
-                    const Text("What I can do",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary,
+                      const Text(
+                        "What I can do",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary,
+                        ),
                       ),
-                      ),
-
-                    const  SizedBox(height: 50.0,),
-
-                      // platorm and skill
-
-                      if(constraints.maxWidth >= kMedDesktopWidth)
-                      const SkillDeskstop()
+                      const SizedBox(height: 50.0),
+                      // platform and skill
+                      if (constraints.maxWidth >= kMedDesktopWidth)
+                        const SkillDeskstop()
                       else
-                      const SkillsMobile()
-
-                  ],
+                        const SkillsMobile()
+                    ],
                   ),
                 ),
 
-                const SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0),
                 // PROJECTS
-                ProjectsSection(key: navbarKeys[2],),
-                const SizedBox(height: 30.0,),
+                ProjectsSection(key: navbarKeys[2]),
+                const SizedBox(height: 30.0),
 
                 // CONTACT
-                ContactSection(key: navbarKeys[3],),
-                const SizedBox(height: 30.0,),
+                ContactSection(key: navbarKeys[3]),
+                const SizedBox(height: 30.0),
 
                 // FOOTER
-               const Footer(),
+                const Footer(),
               ],
             ),
-          )
-
-      );
-    }
-    );
-  }
-
-  void scrollToSection(int navIndex)
-  {
-    if(navIndex == 4)
-      {
-        // open a blog page
-        js.context.callMethod('open', [SnsLinks.linkdin]);
-        return;
-      }
-
-    final key = navbarKeys[navIndex];
-    Scrollable.ensureVisible(
-      key.currentContext!,
-        duration: const Duration(
-            milliseconds: 1200),
-        curve: Curves.easeOutQuart,
-    );
-  }
-
-  void _scrollToSection(int index) {
-    _itemScrollController.scrollTo(
-      index: index,
-      duration: const Duration(milliseconds: 800),
-      curve: Curves.easeInOutCubic,
+          ),
+        );
+      },
     );
   }
 }
