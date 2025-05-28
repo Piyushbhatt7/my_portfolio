@@ -24,7 +24,7 @@ class MainDesktop extends StatelessWidget {
           /// ✅ Wrap the column with `Expanded` to provide bounded width
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(top: 40.0),
+              padding: const EdgeInsets.only(top: 30.0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,9 @@ class MainDesktop extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     TypingText(
-                     words: ['I come from a background where the odds weren’t in favor of a tech career —'],
+                      words: [
+                        'I come from a background where the odds weren’t in favor of a tech career —',
+                      ],
                       style: GoogleFonts.openSans(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
@@ -56,16 +58,35 @@ class MainDesktop extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      '''Yes, a Humanities student with no formal coding foundation. But with unwavering determination and a strong desire to learn, I stepped into the world of technology and developed the skills to build cross-platform applications for any device.
+                      '''Yes, a Humanities student with no formal coding foundation. 
+                      But with unwavering determination and a strong desire to learn, 
+                      I stepped into the world of technology and developed the skills to build cross-platform applications for any device.
 
-What started as curiosity has grown into a clear purpose: to build solutions that drive real-world impact. I thrive in challenging environments that push my thinking and encourage continuous growth.
+What started as curiosity has grown into a clear purpose: 
+to build solutions that drive real-world impact. 
+I thrive in challenging environments that push my thinking and encourage continuous growth.
 
-With a strong foundation in Flutter development and a drive for innovation, I aim to build meaningful projects that solve problems and add value. This journey is just the beginning, and I’m committed to going even further — learning, building, and creating impact.''',
+With a strong foundation in Flutter development and a drive for innovation, 
+I aim to build meaningful projects that solve problems and add value. 
+This journey is just the beginning ''',
                       style: GoogleFonts.openSans(
                         fontSize: 16,
                         color: Colors.white,
                         height: 1.6,
                       ),
+                    ),
+                    const SizedBox(height: 5),
+                    TypingText(
+                      words: [
+                        'I’m committed to going even further — learning, building, and creating impact.'
+                            '',
+                      ],
+                      style: GoogleFonts.openSans(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                      wordSpeed: const Duration(milliseconds: 80),
                     ),
                   ],
                 ),
