@@ -183,21 +183,17 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                 ),
 
 
-                 Padding(
-                   padding: const EdgeInsets.only(left: 600.0),
-                   child: TypingText(
-                    wordSpeed: const Duration(milliseconds: 100),
-                     words: ['I am a'],
-                     style: GoogleFonts.actor(
-                       fontSize: 25,
-                       fontWeight: FontWeight.bold,
-                       color: CustomColor.whitePrimary,
-                     ),
-                   ).animate()
-                   .fadeIn(
-                     duration: const Duration(
-                       seconds: 1),
+                 Text(
+                   'I am a',
+                   style: GoogleFonts.actor(
+                     fontSize: 25,
+                     fontWeight: FontWeight.bold,
+                     color: CustomColor.whitePrimary,
                    ),
+                 ).animate()
+                 .fadeIn(
+                   duration: const Duration(
+                     seconds: 1),
                  ),
 
                   Padding(
