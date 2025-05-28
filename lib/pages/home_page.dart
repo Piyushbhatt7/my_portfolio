@@ -139,8 +139,8 @@ class _HomePageState extends State<HomePage> {
     Scrollable.ensureVisible(
       key.currentContext!,
         duration: const Duration(
-            microseconds: 500),
-        curve: Curves.easeInOut,
+            milliseconds: 1200),
+        curve: Curves.easeOutQuart,
     );
   }
 
