@@ -26,7 +26,7 @@ class _ResumeViewerState extends State<ResumeViewer> {
     try {
       PDFDocument document;
       if (widget.isAssets) {
-        document = await PDFDocument.fromAsset('assets/Piyush_Bhatt_Resume.pdf');
+        document = await PDFDocument.fromAsset("assets/projects/Piyush_Bhatt_Resume.pdf");
       } else {
         document = await PDFDocument.fromURL(
           'https://turquoise-merridie-57.tiiny.site/',
@@ -38,8 +38,7 @@ class _ResumeViewerState extends State<ResumeViewer> {
       });
     } catch (e) {
       setState(() {
-        _error = e.toString();
-         print('Failed to load asset: $e');
+        _error = 'Failed to load resume: $e';
         _isLoading = false;
       });
     }
@@ -79,18 +78,21 @@ class _ResumeViewerState extends State<ResumeViewer> {
           ),
         ],
       ),
-      body:
-          _isLoading
-              ? const Center(
-                child: CircularProgressIndicator(
-                  color: CustomColor.yellowPrimary,
-                ),
-              )
-              : _error != null
-              ? Center(child: Text("Error: $_error"))
+      body: _isLoading
+          ? const Center(
+              child: CircularProgressIndicator(color: CustomColor.yellowPrimary),
+            )
+          : _error != null
+              ? Center(
+                  child: Text(
+                    _error!,
+                    style: const TextStyle(color: Colors.red),
+                    textAlign: TextAlign.center,
+                  ),
+                )
               : _document != null
-              ? PDFViewer(document: _document!)
-              : const SizedBox(),
+                  ? PDFViewer(document: _document!)
+                  : const SizedBox(),
     );
   }
 }
