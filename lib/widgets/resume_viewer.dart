@@ -4,6 +4,7 @@ import 'package:easy_pdf_viewer/easy_pdf_viewer.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/foundation.dart'; // for kIsWeb
 import 'package:path_provider/path_provider.dart';
 
 class ResumeViewer extends StatefulWidget {
@@ -26,50 +27,55 @@ class _ResumeViewerState extends State<ResumeViewer> {
   }
 
   Future<void> _loadDocument() async {
-    try {
-      PDFDocument document;
+  try {
+    PDFDocument document;
 
-      if (widget.isAssets) {
-        // Load PDF from assets (Flutter 3.9 compatible)
-        final bytes = await rootBundle.load('assets/Piyush_Bhatt_Resume.pdf');
-        final dir = await getApplicationDocumentsDirectory();
-        final file = File('${dir.path}/Piyush_Bhatt_Resume.pdf');
-        await file.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
-        document = await PDFDocument.fromFile(file);
-      } else {
-        // Load PDF from URL
-        document = await PDFDocument.fromURL(
-          'https://turquoise-merridie-57.tiiny.site/',
-        );
-      }
-
-      setState(() {
-        _document = document;
-        _isLoading = false;
-      });
-    } catch (e) {
-      setState(() {
-        _error = 'Failed to load resume: $e';
-        _isLoading = false;
-      });
-    }
-  }
-
-  Future<void> _openInBrowser() async {
-    final Uri url = Uri.parse('https://turquoise-merridie-57.tiiny.site/');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
+    if (kIsWeb || !widget.isAssets) {
+      // Web or non-asset loading
+      document = await PDFDocument.fromURL(
+        'https://turquoise-merridie-57.tiiny.site/',
+      );
     } else {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Could not open resume in browser'),
-            backgroundColor: CustomColor.bgLight1,
-          ),
-        );
-      }
+      // For mobile/desktop platforms
+      final bytes = await rootBundle.load('assets/Piyush_Bhatt_Resume.pdf');
+      final dir = await getApplicationDocumentsDirectory();
+      final file = File('${dir.path}/Piyush_Bhatt_Resume.pdf');
+      await file.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+      document = await PDFDocument.fromFile(file);
+    }
+
+    setState(() {
+      _document = document;
+      _isLoading = false;
+    });
+  } catch (e) {
+    setState(() {
+      _error = 'Failed to load resume: $e';
+      _isLoading = false;
+    });
+  }
+}
+
+Future<void> _openInBrowser() async {
+  final Uri url = Uri.parse('https://turquoise-merridie-57.tiiny.site/');
+
+  if (await canLaunchUrl(url)) {
+    await launchUrl(
+      url,
+      mode: LaunchMode.platformDefault, // Works for both mobile and web
+    );
+  } else {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Could not open resume in browser'),
+          backgroundColor: CustomColor.bgLight1,
+        ),
+      );
     }
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
