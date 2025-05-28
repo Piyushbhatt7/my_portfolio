@@ -231,8 +231,8 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                       padding: const EdgeInsets.only(top: 30),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                          vertical: 15,
+                          horizontal: 25,
+                          vertical: 12,
                         ),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -241,30 +241,24 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                               CustomColor.yellowPrimary.withOpacity(0.8),
                             ],
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
                               color: CustomColor.yellowPrimary.withOpacity(0.3),
-                              blurRadius: 10,
-                              spreadRadius: 5,
+                              blurRadius: 8,
+                              spreadRadius: 3,
                             ),
                           ],
                         ),
                         child: Text(
                           'View Resume',
                           style: GoogleFonts.poppins(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: CustomColor.scaffoldBg,
                           ),
                         ),
-                      ).animate()
-                        .fadeIn(duration: const Duration(seconds: 1))
-                        .scale(
-                          begin: const Offset(0.8, 0.8),
-                          end: const Offset(1.0, 1.0),
-                          duration: const Duration(seconds: 1),
-                        ),
+                      ),
                     ),
                   ),
                 ),
