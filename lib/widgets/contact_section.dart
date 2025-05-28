@@ -141,6 +141,8 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                   width: 32,
                 ),
               ),
+
+              SizedBox(height: 10),
             ],
           ),
 
@@ -200,7 +202,7 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                                       Row(
                                         children: [
                                           Text(
-                                            "Press ESC to close",
+                                            "Press here close",
                                             style: TextStyle(
                                               color: CustomColor.whitePrimary.withOpacity(0.7),
                                               fontSize: 12,
