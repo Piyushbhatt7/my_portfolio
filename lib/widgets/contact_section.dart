@@ -161,119 +161,122 @@ class _ContactSectionState extends State<ContactSection> with SingleTickerProvid
                 ),
                 
                 // Form
-                Center(
-                  child: AnimatedBuilder(
-                    animation: _controller,
-                    builder: (context, child) {
-                      return Transform.translate(
-                        offset: Offset(0, _bounceAnimation.value),
-                        child: Transform.scale(
-                          scale: _scaleAnimation.value,
-                          child: Opacity(
-                            opacity: _opacityAnimation.value,
-                            child: Container(
-                              width: 700,
-                              padding: const EdgeInsets.all(30),
-                              decoration: BoxDecoration(
-                                color: CustomColor.bgLight2,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
-                                    blurRadius: 20,
-                                    spreadRadius: 5,
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const Text(
-                                        "Contact Form",
-                                        style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          color: CustomColor.whitePrimary,
-                                        ),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "Press here close",
-                                            style: TextStyle(
-                                              color: CustomColor.whitePrimary.withOpacity(0.7),
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          const SizedBox(width: 10),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              color: CustomColor.yellowPrimary.withOpacity(0.1),
-                                              borderRadius: BorderRadius.circular(8),
-                                            ),
-                                            child: IconButton(
-                                              onPressed: _hideForm,
-                                              icon: const Icon(
-                                                Icons.close,
-                                                color: CustomColor.yellowPrimary,
-                                                size: 24,
-                                              ),
-                                              tooltip: 'Close form (ESC)',
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 20),
-                                  buildNameEmailFieldDesktop(),
-                                  const SizedBox(height: 15),
-                                  CustomTextField(
-                                    hintText: "Your message",
-                                    maxLine: 15,
-                                  ),
-                                  const SizedBox(height: 20),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: ElevatedButton(
-                                          onPressed: () {
-                                            // Handle form submission
-                                            _hideForm();
-                                          },
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: CustomColor.yellowPrimary,
-                                            foregroundColor: CustomColor.whitePrimary,
-                                            padding: const EdgeInsets.symmetric(vertical: 15),
-                                          ),
-                                          child: const Text(
-                                            "Send Message",
-                                            style: TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      TextButton(
-                                        onPressed: _hideForm,
-                                        child: const Text(
-                                          "Cancel",
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  child: Center(
+                    child: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        return Transform.translate(
+                          offset: Offset(0, _bounceAnimation.value),
+                          child: Transform.scale(
+                            scale: _scaleAnimation.value,
+                            child: Opacity(
+                              opacity: _opacityAnimation.value,
+                              child: Container(
+                                width: 700,
+                                padding: const EdgeInsets.all(30),
+                                decoration: BoxDecoration(
+                                  color: CustomColor.bgLight2,
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2),
+                                      blurRadius: 20,
+                                      spreadRadius: 5,
+                                    ),
+                                  ],
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          "Contact Form",
                                           style: TextStyle(
-                                            color: CustomColor.whiteSecondary,
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: CustomColor.whitePrimary,
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "Press here close",
+                                              style: TextStyle(
+                                                color: CustomColor.whitePrimary.withOpacity(0.7),
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 10),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: CustomColor.yellowPrimary.withOpacity(0.1),
+                                                borderRadius: BorderRadius.circular(8),
+                                              ),
+                                              child: IconButton(
+                                                onPressed: _hideForm,
+                                                icon: const Icon(
+                                                  Icons.close,
+                                                  color: CustomColor.yellowPrimary,
+                                                  size: 24,
+                                                ),
+                                                tooltip: 'Close',
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 20),
+                                    buildNameEmailFieldDesktop(),
+                                    const SizedBox(height: 15),
+                                    CustomTextField(
+                                      hintText: "Your message",
+                                      maxLine: 15,
+                                    ),
+                                    const SizedBox(height: 20),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: ElevatedButton(
+                                            onPressed: () {
+                                              // Handle form submission
+                                              _hideForm();
+                                            },
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: CustomColor.yellowPrimary,
+                                              foregroundColor: CustomColor.whitePrimary,
+                                              padding: const EdgeInsets.symmetric(vertical: 15),
+                                            ),
+                                            child: const Text(
+                                              "Send Message",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(width: 10),
+                                        TextButton(
+                                          onPressed: _hideForm,
+                                          child: const Text(
+                                            "Cancel",
+                                            style: TextStyle(
+                                              color: CustomColor.whiteSecondary,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
