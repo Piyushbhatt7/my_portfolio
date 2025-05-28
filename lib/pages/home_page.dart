@@ -1,5 +1,6 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/sns_links.dart';
