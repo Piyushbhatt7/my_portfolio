@@ -26,7 +26,7 @@ class _ResumeViewerState extends State<ResumeViewer> {
     try {
       PDFDocument document;
       if (widget.isAssets) {
-        document = await PDFDocument.fromAsset('assets/resume.pdf');
+        document = await PDFDocument.fromAsset('assets/Piyush_Bhatt_Resume.pdf');
       } else {
         document = await PDFDocument.fromURL(
           'https://turquoise-merridie-57.tiiny.site/',
@@ -39,6 +39,7 @@ class _ResumeViewerState extends State<ResumeViewer> {
     } catch (e) {
       setState(() {
         _error = e.toString();
+         print('Failed to load asset: $e');
         _isLoading = false;
       });
     }
