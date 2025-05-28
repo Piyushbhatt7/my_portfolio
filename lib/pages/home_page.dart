@@ -64,14 +64,9 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= kMinDesktopWidth
-              ? null
-              :  DrawerMobile(onNavItemTap: (int navIndex)
-            {
-              // call function
-              scaffoldKey.currentState?.closeEndDrawer();
-              scrollToSection(navIndex);
-            },),
+          endDrawer: constraints.maxWidth < 600
+              ? CustomDrawer(onSectionSelected: _scrollToSection)
+              : null,
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
@@ -82,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                   HeaderDesktop(onNavMenuTap: (int navIndex)
                     {
                       // call function
-                      scrollToSection(navIndex);
+                      _scrollToSection(navIndex);
                     },)
                 else
                   HeaderMobile(
