@@ -15,10 +15,7 @@ import 'package:portfolio/widgets/skill_deskstop.dart';
 import 'package:portfolio/widgets/skills_mobile.dart';
 import 'dart:js' as js;
 import '../widgets/drawer_mobile.dart';
-import '../constants/text_styles.dart';
-import '../widgets/about_section.dart';
-import '../widgets/drawer.dart';
-import '../widgets/hero_section.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
