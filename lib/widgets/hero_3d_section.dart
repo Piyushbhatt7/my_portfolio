@@ -223,7 +223,7 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ResumeViewer(isAssets: true,),
+                          builder: (context) => const ResumeViewer(),
                         ),
                       );
                     },
