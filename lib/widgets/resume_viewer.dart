@@ -1,7 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:easy_pdf_viewer/easy_pdf_viewer.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:path_provider/path_provider.dart';
 
 class ResumeViewer extends StatefulWidget {
   final bool isAssets;
@@ -25,13 +28,21 @@ class _ResumeViewerState extends State<ResumeViewer> {
   Future<void> _loadDocument() async {
     try {
       PDFDocument document;
+
       if (widget.isAssets) {
-        document = await PDFDocument.fromAsset("assets/projects/Piyush_Bhatt_Resume.pdf");
+        // Load PDF from assets (Flutter 3.9 compatible)
+        final bytes = await rootBundle.load('assets/Piyush_Bhatt_Resume.pdf');
+        final dir = await getApplicationDocumentsDirectory();
+        final file = File('${dir.path}/Piyush_Bhatt_Resume.pdf');
+        await file.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+        document = await PDFDocument.fromFile(file);
       } else {
+        // Load PDF from URL
         document = await PDFDocument.fromURL(
           'https://turquoise-merridie-57.tiiny.site/',
         );
       }
+
       setState(() {
         _document = document;
         _isLoading = false;
@@ -80,16 +91,12 @@ class _ResumeViewerState extends State<ResumeViewer> {
       ),
       body: _isLoading
           ? const Center(
-              child: CircularProgressIndicator(color: CustomColor.yellowPrimary),
+              child: CircularProgressIndicator(
+                color: CustomColor.yellowPrimary,
+              ),
             )
           : _error != null
-              ? Center(
-                  child: Text(
-                    _error!,
-                    style: const TextStyle(color: Colors.red),
-                    textAlign: TextAlign.center,
-                  ),
-                )
+              ? Center(child: Text(_error!))
               : _document != null
                   ? PDFViewer(document: _document!)
                   : const SizedBox(),
