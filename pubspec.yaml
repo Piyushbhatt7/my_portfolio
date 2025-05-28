@@ -41,6 +41,7 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^24.2.8
   flutter_cached_pdfview: ^0.4.3
   visibility_detector: ^0.4.0+2
+  scrollable_positioned_list: ^0.3.8
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
