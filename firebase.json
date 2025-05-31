@@ -3,7 +3,7 @@
     "public": "build/web",
     "ignore": [
       "firebase.json",
-      "**/.*",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+      "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
@@ -19,6 +19,45 @@
           {
             "key": "Content-Type",
             "value": "model/gltf-binary"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.jpg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/jpeg"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.png",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/png"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.svg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/svg+xml"
           },
           {
             "key": "Cache-Control",

@@ -42,9 +42,14 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+    final isMobile = screenWidth < 600;
+
     return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      height: screenHeight,
+      width: screenWidth,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -55,217 +60,195 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
           ],
         ),
       ),
-      child: Stack(
-        children: [
-          // 3D Model Viewer
-          Positioned(
-            top: 40,
-            left: 40,
-            child: MouseRegion(
-              cursor: SystemMouseCursors.move,
-              child: Container(
-                width: 300,
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: CustomColor.whitePrimary.withOpacity(0.1),
-                      blurRadius: 20,
-                      spreadRadius: 5,
+      child: SingleChildScrollView(
+        child: Stack(
+          children: [
+            // 3D Model Viewer
+            if (!isMobile)
+              Positioned(
+                top: 40,
+                left: 40,
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.move,
+                  child: Container(
+                    width: screenWidth * 0.2,
+                    height: screenWidth * 0.2,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: CustomColor.whitePrimary.withOpacity(0.1),
+                          blurRadius: 20,
+                          spreadRadius: 5,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: ModelViewer(
-                    src: 'assets/models/ai_model.glb',
-                    alt: "AI is Hidden in Plain Sight",
-                    ar: false, 
-                    autoRotate: true, 
-                    cameraControls: false,       
-                    backgroundColor: Colors.transparent,               
-                    exposure: 1,
-                    shadowIntensity: 1,
-                    shadowSoftness: 1,
-                    cameraOrbit: '0deg 75deg 105%',
-                    interactionPrompt: InteractionPrompt.none,
-                    interactionPromptStyle: InteractionPromptStyle.basic,
-                    reveal: Reveal.auto,
-                    arModes: const [],
-                    arScale: ArScale.fixed,
-                    autoPlay: true,
-                    rotationPerSecond: "30deg",
-                    minCameraOrbit: "auto auto 50%",
-                    maxCameraOrbit: "auto auto 150%",
-                    minFieldOfView: "30deg",
-                    maxFieldOfView: "90deg",
-                    interpolationDecay: 200,
-                    touchAction: TouchAction.none,
-                    disableZoom: true,
-                    disablePan: true,
-                    disableTap: true,
-                    loading: Loading.eager,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: ModelViewer(
+                        src: 'assets/models/ai_model.glb',
+                        alt: "AI is Hidden in Plain Sight",
+                        ar: false,
+                        autoRotate: true,
+                        cameraControls: false,
+                        backgroundColor: Colors.transparent,
+                        exposure: 1,
+                        shadowIntensity: 1,
+                        shadowSoftness: 1,
+                        cameraOrbit: '0deg 75deg 105%',
+                        interactionPrompt: InteractionPrompt.none,
+                        interactionPromptStyle: InteractionPromptStyle.basic,
+                        reveal: Reveal.auto,
+                        arModes: const [],
+                        arScale: ArScale.fixed,
+                        autoPlay: true,
+                        rotationPerSecond: "30deg",
+                        minCameraOrbit: "auto auto 50%",
+                        maxCameraOrbit: "auto auto 150%",
+                        minFieldOfView: "30deg",
+                        maxFieldOfView: "90deg",
+                        interpolationDecay: 200,
+                        touchAction: TouchAction.none,
+                        disableZoom: true,
+                        disablePan: true,
+                        disableTap: true,
+                        loading: Loading.eager,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-          // Content
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Profile Image with 3D effect
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Transform.scale(
-                      scale: _scaleAnimation.value,
-                      child: Container(
-                        width: 200,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: CustomColor.whitePrimary.withOpacity(0.2),
-                              blurRadius: 20,
-                              spreadRadius: 5,
+            // Content
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: isMobile ? 20.0 : 40.0,
+                vertical: isMobile ? 40.0 : 0.0,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: isMobile ? 40 : 0),
+                  // Profile Image with 3D effect
+                  AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      return Transform.scale(
+                        scale: _scaleAnimation.value,
+                        child: Container(
+                          width: isMobile ? screenWidth * 0.4 : 200,
+                          height: isMobile ? screenWidth * 0.4 : 200,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: CustomColor.whitePrimary.withOpacity(0.2),
+                                blurRadius: 20,
+                                spreadRadius: 5,
+                              ),
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Image.asset(
+                              "assets/profile.jpg",
+                              fit: BoxFit.cover,
                             ),
-                          ],
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.asset(
-                            "assets/profile.jpg",
-                            fit: BoxFit.cover,
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ).animate()
-                  .fadeIn(duration: const Duration(seconds: 1))
-                  .scale(
-                    begin: const Offset(0.5, 0.5),
-                    end: const Offset(1.0, 1.0),
-                    duration: const Duration(seconds: 1),
-                  )
-                  .then()
-                  .shimmer(duration: const Duration(seconds: 2)),
+                      );
+                    },
+                  ).animate()
+                    .fadeIn(duration: const Duration(seconds: 1))
+                    .scale(
+                      begin: const Offset(0.5, 0.5),
+                      end: const Offset(1.0, 1.0),
+                      duration: const Duration(seconds: 1),
+                    )
+                    .then()
+                    .shimmer(duration: const Duration(seconds: 2)),
 
-                const SizedBox(height: 30),
-                Text(
-                  'Hii, Myself',
-                  style: GoogleFonts.poppins(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w300,
-                    color: CustomColor.whitePrimary,
-                  ),
-                ).animate().fadeIn(duration: const Duration(seconds: 1)),
+                  const SizedBox(height: 30),
+                  Text(
+                    'Hii, Myself',
+                    style: GoogleFonts.poppins(
+                      fontSize: isMobile ? screenWidth * 0.05 : 24,
+                      fontWeight: FontWeight.w300,
+                      color: CustomColor.whitePrimary,
+                    ),
+                  ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 550.0,),
-                  child: TypingText(
+                  TypingText(
                     letterSpeed: const Duration(milliseconds: 200),
                     words: ['Piyush Bhatt'],
                     style: GoogleFonts.aBeeZee(
-                      fontSize: 32,
+                      fontSize: isMobile ? screenWidth * 0.07 : 32,
                       fontWeight: FontWeight.bold,
                       color: CustomColor.yellowPrimary,
                     ),
                   ).animate()
-                  .fadeIn(
-                    duration: const Duration(
-                      seconds: 1),
-                  ),
-                ),
+                    .fadeIn(duration: const Duration(seconds: 1)),
 
-
-                 Text(
-                   'I am a',
-                   style: GoogleFonts.actor(
-                     fontSize: 25,
-                     fontWeight: FontWeight.bold,
-                     color: CustomColor.whitePrimary,
-                   ),
-                 ).animate()
-                 .fadeIn(
-                   duration: const Duration(
-                     seconds: 1),
-                 ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 470.0),
-                    child: TypingText(
-                      wordSpeed: const Duration(microseconds: 150),
-                      words: ['Web and Android Developer'],
-                      style: GoogleFonts.architectsDaughter(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.yellowPrimary,
-                      ),
-                    ).animate()
-                    .fadeIn(
-                      duration: const Duration(
-                        seconds: 1),
+                  Text(
+                    'I am a',
+                    style: GoogleFonts.actor(
+                      fontSize: isMobile ? screenWidth * 0.06 : 25,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
                     ),
-                  ),
+                  ).animate()
+                    .fadeIn(duration: const Duration(seconds: 1)),
 
-                const SizedBox(height: 20),
+                  TypingText(
+                    letterSpeed: const Duration(milliseconds: 200),
+                    words: ['Flutter Developer'],
+                    style: GoogleFonts.aBeeZee(
+                      fontSize: isMobile ? screenWidth * 0.07 : 32,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.yellowPrimary,
+                    ),
+                  ).animate()
+                    .fadeIn(duration: const Duration(seconds: 1)),
 
-                // Resume Button with Hover Effect
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ResumeViewer(),
-                        ),
+                  const SizedBox(height: 30),
+                  // Resume Button
+                  ElevatedButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => const ResumeViewer(),
                       );
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 25,
-                          vertical: 12,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              CustomColor.yellowPrimary,
-                              CustomColor.yellowPrimary.withOpacity(0.8),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                          boxShadow: [
-                            BoxShadow(
-                              color: CustomColor.yellowPrimary.withOpacity(0.3),
-                              blurRadius: 8,
-                              spreadRadius: 3,
-                            ),
-                          ],
-                        ),
-                        child: Text(
-                          'View Resume',
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: CustomColor.scaffoldBg,
-                          ),
-                        ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: CustomColor.yellowPrimary,
+                      foregroundColor: CustomColor.scaffoldBg,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: isMobile ? screenWidth * 0.1 : 40,
+                        vertical: isMobile ? screenWidth * 0.03 : 15,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                  ),
-                ),
-              ],
+                    child: Text(
+                      'View Resume',
+                      style: GoogleFonts.openSans(
+                        fontSize: isMobile ? screenWidth * 0.04 : 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ).animate()
+                    .fadeIn(duration: const Duration(seconds: 1))
+                    .scale(
+                      begin: const Offset(0.8, 0.8),
+                      end: const Offset(1.0, 1.0),
+                      duration: const Duration(seconds: 1),
+                    ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

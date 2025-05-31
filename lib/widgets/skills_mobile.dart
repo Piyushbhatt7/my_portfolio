@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../constants/colors.dart';
@@ -19,6 +20,8 @@ class _SkillsMobileState extends State<SkillsMobile> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return VisibilityDetector(
       key: const Key('skills_mobile_section'),
       onVisibilityChanged: (info) {
@@ -28,12 +31,20 @@ class _SkillsMobileState extends State<SkillsMobile> {
           });
         }
       },
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 500.0,
-        ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              "Skills",
+              style: GoogleFonts.palanquinDark(
+                fontSize: screenWidth * 0.06,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.yellowPrimary,
+              ),
+            ),
+            const SizedBox(height: 20),
             // platform
             for(int i = 0; i < platformItems.length; i++)
               MouseRegion(
@@ -42,13 +53,13 @@ class _SkillsMobileState extends State<SkillsMobile> {
                 onExit: (_) => setState(() => _platformHoverStates[i] = false),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
-                  margin: const EdgeInsets.only(bottom: 5.0),
+                  margin: const EdgeInsets.only(bottom: 10.0),
                   width: double.maxFinite,
                   transform: Matrix4.identity()..scale(_platformHoverStates[i] ? 1.02 : 1.0),
                   transformAlignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: CustomColor.bgLight2,
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
                         color: CustomColor.yellowPrimary.withOpacity(_platformHoverStates[i] ? 0.3 : 0.1),
@@ -58,12 +69,19 @@ class _SkillsMobileState extends State<SkillsMobile> {
                     ],
                   ),
                   child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    leading: Image.asset(platformItems[i]["img"], width: 26.0,),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+                    leading: Image.asset(
+                      platformItems[i]["img"],
+                      width: screenWidth * 0.06,
+                      height: screenWidth * 0.06,
+                      fit: BoxFit.contain,
+                    ),
                     title: Text(
                       platformItems[i]["title"],
-                      style: const TextStyle(
+                      style: GoogleFonts.openSans(
+                        fontSize: screenWidth * 0.04,
                         color: CustomColor.whitePrimary,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -77,12 +95,21 @@ class _SkillsMobileState extends State<SkillsMobile> {
                 .then()
                 .shimmer(duration: const Duration(seconds: 2), color: CustomColor.yellowPrimary.withOpacity(0.3)),
 
-            const SizedBox(height: 50.0,),
+            const SizedBox(height: 40.0),
+            Text(
+              "Technologies",
+              style: GoogleFonts.palanquinDark(
+                fontSize: screenWidth * 0.06,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.yellowPrimary,
+              ),
+            ),
+            const SizedBox(height: 20),
             // skills
             Wrap(
               spacing: 10.0,
               runSpacing: 10.0,
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.start,
               children: [
                 for(int i = 0; i < skillItems.length; i++)
                   MouseRegion(
@@ -105,15 +132,25 @@ class _SkillsMobileState extends State<SkillsMobile> {
                         ],
                       ),
                       child: Chip(
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                        padding: EdgeInsets.symmetric(
+                          vertical: screenWidth * 0.02,
+                          horizontal: screenWidth * 0.03,
+                        ),
                         backgroundColor: Colors.transparent,
                         label: Text(
                           skillItems[i]["title"],
-                          style: const TextStyle(
+                          style: GoogleFonts.openSans(
+                            fontSize: screenWidth * 0.035,
                             color: CustomColor.whitePrimary,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        avatar: Image.asset(skillItems[i]["img"]),
+                        avatar: Image.asset(
+                          skillItems[i]["img"],
+                          width: screenWidth * 0.05,
+                          height: screenWidth * 0.05,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ).animate(
@@ -132,3 +169,4 @@ class _SkillsMobileState extends State<SkillsMobile> {
     );
   }
 }
+

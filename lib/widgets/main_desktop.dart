@@ -131,7 +131,7 @@ class MainDesktop extends StatelessWidget {
                             .slideX(begin: -0.2, end: 0),
                             const SizedBox(height: 15),
                             Text(
-                              '''With a strong foundation in Flutter development and a drive for innovation, I aim to build meaningful projects that solve problems and add value. This journey is just the beginning, and I'm committed to going even further — learning, building, and creating impact.''',
+                              '''With a strong foundation in Flutter development and a drive for innovation, I like to build meaningful projects that solve problems and add value. This journey is just the beginning, and I'm committed to going even further — learning, building, and creating impact.''',
                               style: GoogleFonts.openSans(
                                 fontSize: 16,
                                 color: Colors.white,
