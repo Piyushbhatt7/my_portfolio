@@ -169,46 +169,51 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                     .shimmer(duration: const Duration(seconds: 2)),
 
                   const SizedBox(height: 30),
-                  Text(
-                    'Hii, Myself',
-                    style: GoogleFonts.poppins(
-                      fontSize: isMobile ? screenWidth * 0.05 : 24,
-                      fontWeight: FontWeight.w300,
-                      color: CustomColor.whitePrimary,
-                    ),
-                  ).animate().fadeIn(duration: const Duration(seconds: 1)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Hii, Myself',
+                        style: GoogleFonts.poppins(
+                          fontSize: isMobile ? screenWidth * 0.05 : 24,
+                          fontWeight: FontWeight.w300,
+                          color: CustomColor.whitePrimary,
+                        ),
+                      ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                  TypingText(
-                    letterSpeed: const Duration(milliseconds: 200),
-                    words: ['Piyush Bhatt'],
-                    style: GoogleFonts.aBeeZee(
-                      fontSize: isMobile ? screenWidth * 0.07 : 32,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.yellowPrimary,
-                    ),
-                  ).animate()
-                    .fadeIn(duration: const Duration(seconds: 1)),
+                      TypingText(
+                        letterSpeed: const Duration(milliseconds: 200),
+                        words: ['Piyush Bhatt'],
+                        style: GoogleFonts.aBeeZee(
+                          fontSize: isMobile ? screenWidth * 0.07 : 32,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.yellowPrimary,
+                        ),
+                      ).animate()
+                        .fadeIn(duration: const Duration(seconds: 1)),
 
-                  Text(
-                    'I am a',
-                    style: GoogleFonts.actor(
-                      fontSize: isMobile ? screenWidth * 0.06 : 25,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.whitePrimary,
-                    ),
-                  ).animate()
-                    .fadeIn(duration: const Duration(seconds: 1)),
+                      Text(
+                        'I am a',
+                        style: GoogleFonts.actor(
+                          fontSize: isMobile ? screenWidth * 0.06 : 25,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary,
+                        ),
+                      ).animate()
+                        .fadeIn(duration: const Duration(seconds: 1)),
 
-                  TypingText(
-                    letterSpeed: const Duration(milliseconds: 200),
-                    words: ['Flutter Developer'],
-                    style: GoogleFonts.aBeeZee(
-                      fontSize: isMobile ? screenWidth * 0.07 : 32,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.yellowPrimary,
-                    ),
-                  ).animate()
-                    .fadeIn(duration: const Duration(seconds: 1)),
+                      TypingText(
+                        letterSpeed: const Duration(milliseconds: 200),
+                        words: ['Cross-Platform Developer'],
+                        style: GoogleFonts.aBeeZee(
+                          fontSize: isMobile ? screenWidth * 0.07 : 32,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.yellowPrimary,
+                        ),
+                      ).animate()
+                        .fadeIn(duration: const Duration(seconds: 1)),
+                    ],
+                  ),
 
                   const SizedBox(height: 30),
                   // Resume Button
