@@ -181,16 +181,19 @@ class _Hero3DSectionState extends State<Hero3DSection> with SingleTickerProvider
                         ),
                       ).animate().fadeIn(duration: const Duration(seconds: 1)),
 
-                      TypingText(
-                        letterSpeed: const Duration(milliseconds: 200),
-                        words: ['Piyush Bhatt'],
-                        style: GoogleFonts.aBeeZee(
-                          fontSize: isMobile ? screenWidth * 0.07 : 32,
-                          fontWeight: FontWeight.bold,
-                          color: CustomColor.yellowPrimary,
-                        ),
-                      ).animate()
-                        .fadeIn(duration: const Duration(seconds: 1)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50.0),
+                        child: TypingText(
+                          letterSpeed: const Duration(milliseconds: 200),
+                          words: ['Piyush Bhatt'],
+                          style: GoogleFonts.aBeeZee(
+                            fontSize: isMobile ? screenWidth * 0.07 : 32,
+                            fontWeight: FontWeight.bold,
+                            color: CustomColor.yellowPrimary,
+                          ),
+                        ).animate()
+                          .fadeIn(duration: const Duration(seconds: 1)),
+                      ),
 
                       Text(
                         'I am a',
