@@ -12,7 +12,7 @@ class MainDesktop extends StatelessWidget {
   @override   
   Widget build(BuildContext context) { 
     final screenSize = MediaQuery.of(context).size;             
-    final screenWidth = screenSize.width;     
+    final screenWidth = screenSize.width;      
     final screenHeight = screenSize.height;
 
     return Container(
