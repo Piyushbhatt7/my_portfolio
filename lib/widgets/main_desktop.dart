@@ -10,7 +10,7 @@ class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});    
 
   @override   
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {  
     final screenSize = MediaQuery.of(context).size;              
     final screenWidth = screenSize.width;       
     final screenHeight = screenSize.height;
