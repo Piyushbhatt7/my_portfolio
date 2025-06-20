@@ -5,8 +5,8 @@ import 'package:typing_text/typing_text.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../constants/colors.dart';
-
-cl MainDesktop extends StatelessWidget {
+ 
+ MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
 
   @override  
