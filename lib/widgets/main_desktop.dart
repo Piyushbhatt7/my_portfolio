@@ -6,7 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../constants/colors.dart';
   
-class MainDesktop extends StatelessWidget {              
+class MainDesktop extends StatelessWidget {               
   const MainDesktop({super.key});     
  
   @override   
