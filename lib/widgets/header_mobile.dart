@@ -22,7 +22,7 @@ class HeaderMobile extends StatelessWidget {
             icon: const Icon(Icons.menu),
           ),
 
-          const SizedBox(width: 15,),         
+          const SizedBox(width: 15,),          
         ],
       ),
     );
