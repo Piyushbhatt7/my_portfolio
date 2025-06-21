@@ -8,7 +8,7 @@ class HeaderMobile extends StatelessWidget {
  final VoidCallback? onLogoTap;
   final VoidCallback? onMenuTap;
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {   
     return  Container(
       height: 40,
       margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
